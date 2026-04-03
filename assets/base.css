@@ -8,6 +8,36 @@
   --focused-base-box-shadow: 0 0 0 0.3rem rgb(var(--color-background)), 0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
 }
 
+@font-face {
+  font-family: 'Instrument Serif';
+  src: url('/assets/InstrumentSerif-Italic.woff2') format('woff2'),
+      url('/assets/InstrumentSerif-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Instrument Serif';
+  src: url('/assets/InstrumentSerif-Regular.woff2') format('woff2'),
+      url('/assets/InstrumentSerif-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cotham Sans';
+  src: url('/assets/CothamSans.woff2') format('woff2'),
+      url('/assets/CothamSans.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+
 .product-card-wrapper .card,
 .contains-card--product {
   --border-radius: var(--product-card-corner-radius);
