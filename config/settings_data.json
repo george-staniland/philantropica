@@ -8,9 +8,9 @@
  * ------------------------------------------------------------
  */
 {
-  "current": "Dawn",
+  "current": "philantropica_theme_full",
   "presets": {
-    "Dawn": {
+    "philantropica_theme_full": {
       "logo_width": 90,
       "color_schemes": {
         "scheme-1": {

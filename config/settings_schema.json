@@ -1,11 +1,11 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Dawn",
-    "theme_version": "15.4.1",
+    "theme_name": "philantropica_theme_full",
+    "theme_version": "1",
     "theme_author": "Shopify",
-    "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
-    "theme_support_url": "https://support.shopify.com/"
+    "theme_documentation_url": "https://www.templestudios.co/",
+    "theme_support_url": "https://www.templestudios.co/"
   },
   {
     "name": "t:settings_schema.logo.name",
