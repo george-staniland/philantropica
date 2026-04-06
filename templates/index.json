@@ -46,7 +46,7 @@
       "name": "t:sections.image-banner.presets.name",
       "settings": {
         "image": "shopify://shop_images/banner-1.jpg",
-        "image_overlay_color": "#000b43",
+        "image_overlay_color": "#000000",
         "image_height": "screen-height",
         "image_behavior": "test-george-ani"
       }

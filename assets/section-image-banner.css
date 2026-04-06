@@ -511,3 +511,7 @@
     color: currentColor;
   }
 }
+
+.media > img {
+  object-position: top;
+}
