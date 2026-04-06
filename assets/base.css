@@ -100,6 +100,45 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
   padding-right: 3rem;
 }
 
+.fh1 {
+  font-family: 'Instrument Serif';
+  font-size: 100px;
+  line-height: 96px;
+}
+
+.fh2 {
+  font-family: 'Instrument Serif';
+  font-weight: 400;
+  font-size: 80px;
+  line-height: 80px;
+}
+
+.fh3 {
+  font-family: 'Instrument Serif';
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 64px;
+}
+
+.fh4 {
+  font-family: 'Instrument Serif';
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 1;
+}
+
+.fb {
+  font-family: 'Cotham Sans';
+  font-size: 24px;
+  line-height: 1.3;
+}
+
+.fsm {
+  font-family: 'Cotham Sans';
+  font-size: 16px;
+  line-height: 1;
+}
+
 @media screen and (min-width: 750px) {
   .page-width {
     padding: 0 5rem;

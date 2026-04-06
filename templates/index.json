@@ -9,6 +9,55 @@
  */
 {
   "sections": {
+    "image_banner_6zrW9m": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_FcVFcP": {
+          "type": "heading",
+          "settings": {
+            "heading": "The world’s first tax deductible soft drink",
+            "heading_size": "fh2"
+          }
+        },
+        "text_TkrfVP": {
+          "type": "text",
+          "settings": {
+            "text": "Saving the ocean is now bottled with pineapple and a hint of sea salt.",
+            "text_style": "body"
+          }
+        },
+        "buttons_D8Prbw": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Buy now",
+            "button_link_1": "shopify://collections/all",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_FcVFcP",
+        "text_TkrfVP",
+        "buttons_D8Prbw"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/banner-1.jpg",
+        "image_overlay_opacity": 20,
+        "image_height": "large",
+        "image_behavior": "none",
+        "desktop_content_position": "bottom-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-1",
+        "stack_images_on_mobile": false,
+        "mobile_content_alignment": "center",
+        "show_text_below": true
+      }
+    },
     "custom_liquid_ijrAxE": {
       "type": "custom-liquid",
       "name": "t:sections.custom-liquid.presets.name",
@@ -56,7 +105,7 @@
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
-        "color_scheme": "",
+        "color_scheme": "scheme-b7a19602-1e50-4373-8ea1-c1ad0fcf758f",
         "full_width": true,
         "padding_top": 40,
         "padding_bottom": 52
@@ -64,6 +113,7 @@
     }
   },
   "order": [
+    "image_banner_6zrW9m",
     "custom_liquid_ijrAxE",
     "rich_text_XghGfD"
   ]
