@@ -1,4 +1,4 @@
 [environments.dev]
 store = "philantropica"
 open = true
-theme-editor-sync = false
+theme-editor-sync = true

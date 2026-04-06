@@ -253,6 +253,33 @@
           font-size: 1.6rem;
         }
       }
+
+      @font-face {
+        font-family: 'Instrument Serif';
+        src: url('{{ "InstrumentSerif-Italic.woff2" | asset_url }}') format('woff2'),
+        url('{{ "InstrumentSerif-Italic.woff" | asset_url }}') format('woff');
+        font-weight: normal;
+        font-style: italic;
+        font-display: swap;
+      }
+      
+      @font-face {
+        font-family: 'Instrument Serif';
+        src: url('{{ "InstrumentSerif-Regular.woff2" | asset_url }}') format('woff2'),
+        url('{{ "InstrumentSerif-Regular.woff" | asset_url }}') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+      
+      @font-face {
+        font-family: 'Cotham Sans';
+        src: url('{{ "CothamSans.woff2" | asset_url }}') format('woff2'),
+        url('{{ "CothamSans.woff" | asset_url }}') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      } 
     {% endstyle %}
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
