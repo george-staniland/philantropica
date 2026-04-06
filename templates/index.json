@@ -23,7 +23,7 @@
           "type": "text",
           "settings": {
             "text": "Saving the ocean is now bottled with pineapple and a hint of sea salt.",
-            "text_style": "body"
+            "text_style": "fb"
           }
         },
         "buttons_D8Prbw": {
@@ -46,9 +46,9 @@
       "name": "t:sections.image-banner.presets.name",
       "settings": {
         "image": "shopify://shop_images/banner-1.jpg",
-        "image_overlay_opacity": 20,
+        "image_overlay_opacity": 10,
         "image_height": "screen-height",
-        "image_behavior": "none",
+        "image_behavior": "test-george-ani",
         "desktop_content_position": "bottom-center",
         "desktop_content_alignment": "center",
         "show_text_box": false,
