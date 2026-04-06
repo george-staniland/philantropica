@@ -50,9 +50,59 @@
         "image_height": "screen-height",
         "image_behavior": "test-george-ani"
       }
+    },
+    "image_with_text_QYHMxn": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_izqQ3G": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Soft Drink.<br/>Hard Impact.</p>",
+            "heading_size": "fh2"
+          }
+        },
+        "text_7BFgmj": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Crafted to fund the biggest ocean cleanup in history.</p>",
+            "text_style": "fb"
+          }
+        },
+        "button_6XqMDK": {
+          "type": "button",
+          "settings": {
+            "button_label": "Learn more",
+            "button_link": "shopify://pages/impact",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_izqQ3G",
+        "text_7BFgmj",
+        "button_6XqMDK"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/sea.jpg",
+        "height": "large",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "badge_image": "shopify://shop_images/badge.png",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "center",
+        "section_color_scheme": "scheme-b7a19602-1e50-4373-8ea1-c1ad0fcf758f",
+        "color_scheme": "scheme-b7a19602-1e50-4373-8ea1-c1ad0fcf758f",
+        "padding_top": 240,
+        "padding_bottom": 240
+      }
     }
   },
   "order": [
-    "image_banner_6zrW9m"
+    "image_banner_6zrW9m",
+    "image_with_text_QYHMxn"
   ]
 }

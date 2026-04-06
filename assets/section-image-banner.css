@@ -382,6 +382,7 @@
     border-radius: 0;
     box-shadow: none;
     display: flex;
+    flex-direction: column;
     row-gap: 30px;
   }
 

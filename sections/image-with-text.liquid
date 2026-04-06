@@ -57,6 +57,17 @@
             {%- else -%}
               {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
             {%- endif -%}
+            {%- if section.settings.badge_image != blank -%}
+              {{
+                section.settings.badge_image
+                | image_url: width: 170
+                | image_tag:
+                  class: 'image-with-text__badge-image',
+                  loading: 'lazy',
+                  widths: '120, 180, 240, 320, 400',
+                  sizes: '(min-width: 750px) 180px, 120px'
+              }}
+            {%- endif -%}
           </div>
         </div>
         <div class="image-with-text__text-item grid__item">
@@ -67,12 +78,12 @@
             {%- for block in section.blocks -%}
               {% case block.type %}
                 {%- when 'heading' -%}
-                  <h2
-                    class="image-with-text__heading inline-richtext {{ block.settings.heading_size }}"
+                  <div
+                    class="image-with-text__heading richtext {{ block.settings.heading_size }}"
                     {{ block.shopify_attributes }}
                   >
                     {{ block.settings.heading }}
-                  </h2>
+                  </div>
                 {%- when 'caption' -%}
                   <p
                     class="image-with-text__text image-with-text__text--caption {{ block.settings.text_style }} {{ block.settings.text_style }}--{{ block.settings.text_size }} {{ block.settings.text_style }}"
@@ -201,6 +212,12 @@
       "label": "t:sections.all.animation.image_behavior.label"
     },
     {
+      "type" :"image_picker",
+      "id" :"badge_image",
+      "label": "Badge Image",
+      "info": "Floats above image"
+    },
+    {
       "type": "header",
       "content": "t:sections.image-with-text.settings.header.content"
     }, 
@@ -304,7 +321,7 @@
       "type": "range",
       "id": "padding_top",
       "min": 0,
-      "max": 100,
+      "max": 300,
       "step": 4,
       "unit": "px",
       "label": "t:sections.all.padding.padding_top",
@@ -314,7 +331,7 @@
       "type": "range",
       "id": "padding_bottom",
       "min": 0,
-      "max": 100,
+      "max": 300,
       "step": 4,
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
@@ -328,7 +345,7 @@
       "limit": 1,
       "settings": [
         {
-          "type": "inline_richtext",
+          "type": "richtext",
           "id": "heading",
           "default": "t:sections.image-with-text.blocks.heading.settings.heading.default",
           "label": "t:sections.image-with-text.blocks.heading.settings.heading.label"
@@ -338,28 +355,32 @@
           "id": "heading_size",
           "options": [
             {
-              "value": "h2",
-              "label": "t:sections.all.heading_size.options__1.label"
+              "value": "fh1",
+              "label": "FH1 (100px)"
             },
             {
-              "value": "h1",
-              "label": "t:sections.all.heading_size.options__2.label"
+              "value": "fh2",
+              "label": "FH2 (80px)"
             },
             {
-              "value": "h0",
-              "label": "t:sections.all.heading_size.options__3.label"
+              "value": "fh3",
+              "label": "FH3 (64px)"
             },
             {
-              "value": "hxl",
-              "label": "t:sections.all.heading_size.options__4.label"
+              "value": "fh4",
+              "label": "FH4 (40px)"
             },
             {
-              "value": "hxxl",
-              "label": "t:sections.all.heading_size.options__5.label"
+              "value": "fb",
+              "label": "FB (24px)"
+            },
+            {
+              "value": "fsm",
+              "label": "FSM (16px)"
             }
           ],
-          "default": "h1",
-          "label": "t:sections.all.heading_size.label"
+          "default": "fh2",
+          "label": "Heading size"
         }
       ]
     },
@@ -428,15 +449,15 @@
           "id": "text_style",
           "options": [
             {
-              "value": "body",
+              "value": "fb",
               "label": "t:sections.image-with-text.blocks.text.settings.text_style.options__1.label"
             },
             {
-              "value": "subtitle",
+              "value": "fsm",
               "label": "t:sections.image-with-text.blocks.text.settings.text_style.options__2.label"
             }
           ],
-          "default": "body",
+          "default": "fb",
           "label": "t:sections.image-with-text.blocks.text.settings.text_style.label"
         }
       ]
