@@ -203,7 +203,7 @@
 
 @media screen and (min-width: 750px) {
   .image-with-text__grid--reverse .image-with-text__content {
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
   }
 

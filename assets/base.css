@@ -164,13 +164,20 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
 
 
   .page-width--narrow {
-    max-width: 72.6rem;
-    padding: 0;
+    max-width: 1451px;
+    padding: 0 100px;
+    margin: 0 auto;
   }
 
   .page-width-desktop {
     /* max-width: var(--page-width);
     padding: 0 5rem; */
+  }
+}
+
+@media screen and (min-width: 1090px) { 
+  .page-width--narrow {
+    padding: 0 200px;
   }
 }
 
