@@ -2,6 +2,10 @@
   margin-bottom: 0;
 }
 
+.banner.screen-height:not(.banner--adapt) {
+  min-height: 100vh;
+}
+
 .image-with-text .grid__item {
   position: relative;
 }

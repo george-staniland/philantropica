@@ -29,7 +29,7 @@
         "buttons_D8Prbw": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Buy now",
+            "button_label_1": "Reserve now",
             "button_link_1": "shopify://collections/all",
             "button_style_secondary_1": false,
             "button_label_2": "",
@@ -47,7 +47,7 @@
       "settings": {
         "image": "shopify://shop_images/banner-1.jpg",
         "image_overlay_opacity": 20,
-        "image_height": "large",
+        "image_height": "screen-height",
         "image_behavior": "none",
         "desktop_content_position": "bottom-center",
         "desktop_content_alignment": "center",
