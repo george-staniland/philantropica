@@ -836,6 +836,11 @@ summary::-webkit-details-marker {
 .button.button--primary {
   border-radius: 16px;
   box-shadow: 0px -2px 0px 0px rgba(255, 255, 255, 1), 0px 2px 0px 0px rgba(23, 34, 88, 1);
+  transition: box-shadow 0.4s ease-in-out;
+}
+
+.button.button--primary:hover {
+  box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 1), 0px -1px 0px 0px rgba(23, 34, 88, 1);
 }
 
 .title-wrapper--self-padded-tablet-down,
