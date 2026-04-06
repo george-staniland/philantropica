@@ -3667,3 +3667,7 @@ header {
   padding: 1.2rem;
   font-size: 20px;
 }
+
+.product-card-large {
+  background-color: blue;
+}

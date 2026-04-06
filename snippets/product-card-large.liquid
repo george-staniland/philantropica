@@ -1,0 +1,36 @@
+{{ 'component-product-card-large.css' | asset_url | stylesheet_tag }}
+
+{%- if card_product and card_product != empty -%}
+  {%- liquid
+    assign product_image = card_product.featured_media
+    assign background_image_url = blank
+    if product_image
+      assign background_image_url = product_image | image_url: width: 1600
+    endif
+  -%}
+
+  <div
+    class="product-card-large"
+    {% if background_image_url != blank %}
+      style="--product-card-large-background-image: url('{{ background_image_url }}');"
+    {% endif %}
+  >
+    <a
+      href="{{ card_product.url }}"
+      class="product-card-large__overlay-link"
+      aria-label="{{ card_product.title | escape }}"
+    ></a>
+
+    <div class="product-card-large__content">
+      <h3 class="fh3 product-card-large__title">{{ card_product.title | escape }}</h3>
+
+      <div class="product-card-large__price">
+        {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
+      </div>
+
+      <a href="{{ card_product.url }}" class="button button--primary product-card-large__button">
+        Buy now
+      </a>
+    </div>
+  </div>
+{%- endif -%}
