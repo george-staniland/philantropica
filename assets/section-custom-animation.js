@@ -1,3 +1,4 @@
+// Section  - Image Layout
 document.addEventListener('DOMContentLoaded', () => {
   const imageLayoutSection = document.querySelector('.section__image-layout');
   if (!imageLayoutSection) return;
@@ -29,3 +30,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
   observer.observe(imageLayoutSection);
 });
+// End Section  - Image Layout
