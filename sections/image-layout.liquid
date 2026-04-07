@@ -1,6 +1,7 @@
 {{ 'section-image-layout.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'section-image-layout.js' | asset_url }}" defer="defer"></script>
 
-<div class="section__image-layout">
+<div class="section__image-layout" data-section-id="{{ section.id }}">
 
   <div class="background-wrap">
     {% if section.settings.background_video != blank %}
@@ -22,7 +23,7 @@
     {% endif %}
   </div>
 
-  <section class="overlay-main">
+  <section class="overlay-main ">
     {% if section.settings.main != blank %}
       {{
         section.settings.main
