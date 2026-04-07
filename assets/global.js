@@ -1330,3 +1330,33 @@ class CartPerformance {
     );
   }
 }
+
+
+function initVerticalCarousels() {
+  const carouselEls = document.querySelectorAll('.vertical-carousel');
+
+  carouselEls.forEach((carouselEl) => {
+    if (carouselEl.swiper) return;
+
+    new Swiper(carouselEl, {
+      direction: 'vertical',
+      slidesPerView: 1.2,
+      spaceBetween: 24,
+      loop: true,
+      allowTouchMove: false,
+      simulateTouch: false,
+      keyboard: {
+        enabled: false,
+      },
+      mousewheel: false,
+      speed: 6300,
+      autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
+      },
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', initVerticalCarousels);
+document.addEventListener('shopify:section:load', initVerticalCarousels);
