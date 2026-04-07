@@ -1,0 +1,101 @@
+{{ 'section-founding-members.css' | asset_url | stylesheet_tag }}
+
+<section class="section__founding-members" data-section-id="{{ section.id }}">
+  <div class="founding-members__background">
+    {% if section.settings.background_image != blank %}
+      <img
+        src="{{ section.settings.background_image | image_url: width: 3840 }}"
+        alt="{{ section.settings.heading | escape }}"
+        loading="lazy"
+        class="founding-members__background-image"
+      >
+    {% endif %}
+  </div>
+  <div class="overlay"></div>
+
+  <h2 class="fh2 section__title">{{ section.settings.heading }}</h2>
+
+
+    {% if section.settings.corner_image_1 != blank %}
+      <img
+        src="{{ section.settings.corner_image_1 | image_url: width: 1200 }}"
+        alt="{{ section.settings.heading | escape }}"
+        loading="lazy"
+        class="founding-members__image founding-members__image--top-left"
+      >
+    {% endif %}
+
+    {% if section.settings.corner_image_2 != blank %}
+      <img
+        src="{{ section.settings.corner_image_2 | image_url: width: 1200 }}"
+        alt="{{ section.settings.heading | escape }}"
+        loading="lazy"
+        class="founding-members__image founding-members__image--top-right"
+      >
+    {% endif %}
+
+    {% if section.settings.corner_image_3 != blank %}
+      <img
+        src="{{ section.settings.corner_image_3 | image_url: width: 1200 }}"
+        alt="{{ section.settings.heading | escape }}"
+        loading="lazy"
+        class="founding-members__image founding-members__image--bottom-left"
+      >
+    {% endif %}
+
+    {% if section.settings.corner_image_4 != blank %}
+      <img
+        src="{{ section.settings.corner_image_4 | image_url: width: 1200 }}"
+        alt="{{ section.settings.heading | escape }}"
+        loading="lazy"
+        class="founding-members__image founding-members__image--bottom-right"
+      >
+    {% endif %}
+
+</section>
+
+{% schema %}
+{
+  "name": "Founding Members",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Founding Members"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image"
+    },
+    {
+      "type": "image_picker",
+      "id": "corner_image_1",
+      "label": "Image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "corner_image_2",
+      "label": "Image 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "corner_image_3",
+      "label": "Image 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "corner_image_4",
+      "label": "Image 4"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Founding Members"
+    }
+  ]
+}
+{% endschema %}
