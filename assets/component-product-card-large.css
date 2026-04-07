@@ -34,7 +34,7 @@
 
 .product-card-large:hover {
   .product-card-large__image {
-    transform: scale(1.03);
+    transform: scale(1.03) rotate(-0.03deg);
   }
 }
 
@@ -51,11 +51,6 @@
   padding-bottom: 75px;
 }
 
-.product-card-large__tag {
-  padding: 10px 9px 8px;
-  background-color: var(--blue);
-  border-radius: 10px;
-}
 
 .product-card-large__title {
   margin: 0;

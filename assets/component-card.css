@@ -117,6 +117,19 @@
   width: 100%;
 }
 
+.card__tag-callouts {
+  position: absolute;
+  top: 19px;
+  right: 19px;
+  z-index: 3;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+  max-width: calc(100% - 27px);
+}
+
+
 .card--media .card__inner .card__content {
   position: relative;
   padding: calc(var(--image-padding) + 1rem);
@@ -266,7 +279,7 @@
 @media screen and (min-width: 750px) {
   .card__information {
     padding-bottom: 1.7rem;
-    padding-top: 1.7rem;
+    padding-top: 24px
   }
 }
 
@@ -303,6 +316,8 @@
 .card__heading {
   margin-top: 0;
   margin-bottom: 0;
+  font-size: 40px;
+  line-height: 1;
 }
 
 .card__heading:last-child {
@@ -592,4 +607,17 @@
   .grid__item:nth-child(8n) .product-card-wrapper:hover .shape--blob {
     clip-path: polygon(var(--shape--blob-5));
   }
+}
+
+.card-information span {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.card-information  {
+ padding-top: 12px;
+}
+
+.badge {
+  color: var(--blue);
 }
