@@ -1,0 +1,97 @@
+{{ 'section-image-layout.css' | asset_url | stylesheet_tag }}
+
+<div class="section__image-layout">
+
+  <div class="background-wrap">
+    {% if section.settings.background_video != blank %}
+      {{
+        section.settings.background_video
+        | video_tag:
+          autoplay: true,
+          loop: true,
+          muted: true,
+          controls: false,
+          class: "background-video-el"
+      }}
+    {% elsif section.settings.background != blank %}
+      {{
+        section.settings.background
+        | image_url: width: 3840
+        | image_tag: loading: 'lazy', alt: 'Background image',  class: "background-img-el"
+      }}
+    {% endif %}
+  </div>
+
+  <section class="overlay-main">
+    {% if section.settings.main != blank %}
+      {{
+        section.settings.main
+        | image_url: width: 3840
+        | image_tag: 
+            loading: 'lazy', 
+            alt: 'Main image',
+            class: "overlay-main__image"
+      }}
+    {% endif %}
+
+    <div class="overlay-card">
+      {% if section.settings.overlay != blank %}
+        {{
+          section.settings.overlay
+          | image_url: width: 3840
+          | image_tag: 
+              loading: 'lazy', 
+              alt: 'Overlay image',
+              class: 'overlay-card__image'
+        }}
+      {% endif %}
+    </div>
+  </section>
+
+
+
+</div>
+
+{% schema %}
+{
+  "name": "Image layout",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Background Media",
+      "info": "Can be image or video, only one will show at a time"
+    },
+    {
+      "type": "image_picker",
+      "id": "background",
+      "label": "background"
+    },
+    {
+      "type": "video",
+      "id": "background_video",
+      "label": "background video"
+    },
+    {
+      "type": "header",
+      "content": "Overlay images"
+    },
+    {
+      "type": "image_picker",
+      "id": "main",
+      "label": "main"
+    },
+    {
+      "type": "image_picker",
+      "id": "overlay",
+      "label": "overlay"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image layout"
+    }
+  ]
+}
+{% endschema %}

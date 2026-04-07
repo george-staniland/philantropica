@@ -1,0 +1,61 @@
+.section__image-layout {
+  position: relative;
+  height: 88vh;
+  margin-top: 250px;
+}
+
+.background-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.background-wrap {
+  video, img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+ .overlay-main {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -100px;
+  width: clamp(500px, 60vw, 1000px);
+  aspect-ratio: 4/2.6;
+    .overlay-main__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 20px;
+      position: absolute;
+    }
+}
+
+.overlay-card {
+  position: absolute;
+  right: 0px;
+  bottom: 50%;
+  transform: translate(45%, 50%);
+  height: 85%;
+  width: auto;
+}
+
+.overlay-card__image {
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+@media(max-width: 996px) {
+  .overlay-main {
+    width: 80vw;
+  }
+}
