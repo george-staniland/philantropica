@@ -73,7 +73,7 @@
   class="color-{{ section.settings.color_scheme }} isolate gradient"
 >
   <div
-    class="page-width collection{% if section.settings.quick_add == 'bulk' %} collection-quick-add-bulk{% endif %} section-{{ section.id }}-padding{% if section.settings.full_width %} collection--full-width{% endif %}"
+    class="{% if section.settings.show_large_product_cards %}large__cards page-width--extra-narrow {% else %}page-width{% endif %} collection{% if section.settings.quick_add == 'bulk' %} collection-quick-add-bulk{% endif %} section-{{ section.id }}-padding{% if section.settings.full_width %} collection--full-width{% endif %}"
     id="collection-{{ section.id }}"
     data-id="{{ section.id }}"
   >
@@ -125,6 +125,7 @@
                 {%- if section.settings.show_large_product_cards -%}
                   {% render 'product-card-large',
                     card_product: product,
+                    card_index: forloop.index,
                     media_aspect_ratio: section.settings.image_ratio,
                     image_shape: section.settings.image_shape,
                     lazy_load: lazy_load,

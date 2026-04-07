@@ -3,18 +3,27 @@
 {%- if card_product and card_product != empty -%}
   {%- liquid
     assign product_image = card_product.featured_media
-    assign background_image_url = blank
-    if product_image
-      assign background_image_url = product_image | image_url: width: 1600
+    assign index_class = blank
+    if card_index
+      assign index_modulo = card_index | modulo: 2
+      if index_modulo == 0
+        assign index_class = ' card-even'
+      else
+        assign index_class = ' card-odd'
+      endif
     endif
   -%}
 
   <div
-    class="product-card-large"
-    {% if background_image_url != blank %}
-      style="--product-card-large-background-image: url('{{ background_image_url }}');"
-    {% endif %}
+    class="product-card-large {{ index_class }}"
   >
+    {% if product_image %}
+      {{
+        product_image
+        | image_url: width: 1800
+        | image_tag: class: 'product-card-large__image', alt: card_product.title, loading: 'lazy'
+      }}
+    {% endif %}
     <a
       href="{{ card_product.url }}"
       class="product-card-large__overlay-link"
@@ -22,6 +31,14 @@
     ></a>
 
     <div class="product-card-large__content">
+      {% assign product_tag_callouts = card_product.metafields.custom.product_tag_callouts.value %}
+      {% if product_tag_callouts != blank %}
+        <div class="product-card-large__tags">
+          {% for tag_callout in product_tag_callouts %}
+            <span class="product-card-large__tag fsm ">{{ tag_callout }}</span>
+          {% endfor %}
+        </div>
+      {% endif %}
       <h3 class="fh3 product-card-large__title">{{ card_product.title | escape }}</h3>
 
       <div class="product-card-large__price">
@@ -29,7 +46,7 @@
       </div>
 
       <a href="{{ card_product.url }}" class="button button--primary product-card-large__button">
-        Buy now
+        Reserve now
       </a>
     </div>
   </div>

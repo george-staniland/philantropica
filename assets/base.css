@@ -7,6 +7,7 @@
   --focused-base-outline-offset: 0.3rem;
   --focused-base-box-shadow: 0 0 0 0.3rem rgb(var(--color-background)), 0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
   --pm: 64px;
+  --blue: #172258;
 }
 
 .product-card-wrapper .card,
@@ -165,6 +166,12 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
 
   .page-width--narrow {
     max-width: 1451px;
+    padding: 0 100px;
+    margin: 0 auto;
+  }
+
+  .page-width--extra-narrow {
+    max-width: 1054px;
     padding: 0 100px;
     margin: 0 auto;
   }
