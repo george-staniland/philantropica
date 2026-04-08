@@ -1,0 +1,121 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "description",
+        "buy_buttons"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_VGQRGX": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_f7yE6Q": {
+          "type": "heading",
+          "settings": {
+            "heading": "Philantropica Dept. of Merch & Bundles",
+            "heading_size": "fh2"
+          }
+        },
+        "button_at4X7U": {
+          "type": "button",
+          "settings": {
+            "button_label": "Have a look",
+            "button_link": "shopify://collections",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_f7yE6Q",
+        "button_at4X7U"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "content_width": "standard",
+        "color_scheme": "scheme-b7a19602-1e50-4373-8ea1-c1ad0fcf758f",
+        "full_width": false,
+        "reveal_on_scroll": true,
+        "padding_top": 140,
+        "padding_bottom": 0
+      }
+    },
+    "featured_collection_XNUaK4": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "collection": "frontpage",
+        "show_large_product_cards": false,
+        "products_to_show": 3,
+        "title": "",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 3,
+        "enable_desktop_slider": false,
+        "full_width": true,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-b7a19602-1e50-4373-8ea1-c1ad0fcf758f",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 100
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_VGQRGX",
+    "featured_collection_XNUaK4"
+  ]
+}

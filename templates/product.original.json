@@ -15,18 +15,6 @@
         "color_scheme": "scheme-1"
       }
     },
-    "heading_jWt6Qp": {
-      "type": "heading",
-      "settings": {
-        "color_scheme": "scheme-1",
-        "heading": "<p>Philantropica is the world\u2019s first tax-deductible soft drink</p>",
-        "heading_size": "fh2",
-        "overlay_image_1": "",
-        "overlay_image_2": "",
-        "padding_top": 20,
-        "padding_bottom": 20
-      }
-    },
     "collapsible_content_xVw9Kg": {
       "type": "collapsible-content",
       "blocks": {
@@ -71,11 +59,146 @@
         "padding_top": 420,
         "padding_bottom": 68
       }
+    },
+    "heading_jWt6Qp": {
+      "type": "heading",
+      "settings": {
+        "color_scheme": "scheme-b7a19602-1e50-4373-8ea1-c1ad0fcf758f",
+        "heading": "<p>Philantropica is the world’s first tax-deductible soft drink</p>",
+        "heading_size": "fh2",
+        "overlay_image_1": "shopify://shop_images/pin1.png",
+        "overlay_image_2": "shopify://shop_images/pin2.png",
+        "padding_top": 200,
+        "padding_bottom": 200
+      }
+    },
+    "image_layout_two_GBcDkR": {
+      "type": "image-layout-two",
+      "name": "Image Layout Two",
+      "settings": {
+        "background_image": "shopify://shop_images/beach1.jpg",
+        "overlay_image": "shopify://shop_images/pool.png",
+        "overlay_border_color": "#ffd95e",
+        "padding_top": 164,
+        "padding_bottom": 0
+      }
+    },
+    "image_with_text_fC3MQX": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_whraU4": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Great for the ocean. Terrible for your wallet. </p>",
+            "heading_size": "fh2"
+          }
+        },
+        "text_KgA3Ek": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Your public image might just get a splash of it too.</p>",
+            "text_style": "fb"
+          }
+        }
+      },
+      "block_order": [
+        "heading_whraU4",
+        "text_KgA3Ek"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/prod-layout-c.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "center",
+        "mobile_content_alignment": "center",
+        "section_color_scheme": "scheme-b7a19602-1e50-4373-8ea1-c1ad0fcf758f",
+        "color_scheme": "scheme-b7a19602-1e50-4373-8ea1-c1ad0fcf758f",
+        "overlay_previous_section": true,
+        "padding_top": 0,
+        "padding_bottom": 124
+      }
+    },
+    "rich_text_9B9cW3": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_twGBcY": {
+          "type": "heading",
+          "settings": {
+            "heading": "Philantropica Dept. of Merch & Bundles",
+            "heading_size": "fh2"
+          }
+        },
+        "button_W7R3ed": {
+          "type": "button",
+          "settings": {
+            "button_label": "Have a look",
+            "button_link": "shopify://collections",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_twGBcY",
+        "button_W7R3ed"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "content_width": "standard",
+        "color_scheme": "scheme-b7a19602-1e50-4373-8ea1-c1ad0fcf758f",
+        "full_width": false,
+        "reveal_on_scroll": true,
+        "padding_top": 140,
+        "padding_bottom": 0
+      }
+    },
+    "featured_collection_9VgeFA": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "collection": "frontpage",
+        "show_large_product_cards": false,
+        "products_to_show": 3,
+        "title": "",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 3,
+        "enable_desktop_slider": false,
+        "full_width": true,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-b7a19602-1e50-4373-8ea1-c1ad0fcf758f",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 100
+      }
     }
   },
   "order": [
     "main",
+    "collapsible_content_xVw9Kg",
     "heading_jWt6Qp",
-    "collapsible_content_xVw9Kg"
+    "image_layout_two_GBcDkR",
+    "image_with_text_fC3MQX",
+    "rich_text_9B9cW3",
+    "featured_collection_9VgeFA"
   ]
 }

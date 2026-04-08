@@ -2,6 +2,432 @@ product-info {
   display: block;
 }
 
+.product-wrap {
+  position: relative;
+}
+
+.bg-texture {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.product-wrap .product {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 3rem;
+}
+
+.product__media-wrapper,
+.product__info-wrapper {
+  min-width: 0;
+}
+
+.product__image-wrap {
+  width: 100%;
+  background: transparent;
+}
+
+.product__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: transparent;
+}
+
+.product__info-wrapper {
+  padding: 0;
+}
+
+.product__info-container > * + * {
+  margin-top: 1.5rem;
+}
+
+.product__title {
+  margin: 0;
+  word-break: break-word;
+}
+
+.product__title > a {
+  display: none;
+}
+
+.product__description {
+  margin: 0;
+}
+
+.product__tax {
+  margin: 0;
+}
+
+.product-form {
+  display: block;
+}
+
+.product-form__input {
+  margin: 0 0 1.2rem;
+  border: 0;
+  padding: 0;
+}
+
+.product-form__buttons {
+  max-width: 100%;
+}
+
+.product-form__submit {
+  margin: 0;
+}
+
+.product-form__quantity .form__label {
+  display: block;
+  margin-bottom: 0.6rem;
+}
+
+.product__inventory {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.product__inventory .svg-wrapper,
+.product__inventory svg {
+  width: 15px;
+  height: 15px;
+}
+
+.product__accordion .accordion__content {
+  padding: 0 1rem;
+}
+
+.icon-with-text {
+  --icon-size: calc(var(--font-heading-scale) * 3rem);
+  --icon-spacing: calc(var(--font-heading-scale) * 1rem);
+}
+
+.icon-with-text--horizontal {
+  display: flex;
+  column-gap: 2rem;
+}
+
+.icon-with-text--vertical .icon-with-text__item {
+  margin-bottom: 1.6rem;
+}
+
+.icon-with-text__item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon-with-text .svg-wrapper,
+.icon-with-text img {
+  width: var(--icon-size);
+  height: var(--icon-size);
+}
+
+.product-popup-modal {
+  box-sizing: border-box;
+  opacity: 0;
+  position: fixed;
+  visibility: hidden;
+  z-index: -1;
+  inset: 0;
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  background: rgba(var(--color-foreground), 0.2);
+}
+
+.product-popup-modal[open] {
+  opacity: 1;
+  visibility: visible;
+  z-index: 101;
+}
+
+.product-popup-modal__content {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 92%;
+  height: 80%;
+  margin: 5rem auto 0;
+  padding: 0 1.5rem 0 3rem;
+  overflow: auto;
+  border-radius: var(--popup-corner-radius);
+  border: var(--popup-border-width) solid rgba(var(--color-foreground), var(--popup-border-opacity));
+  background-color: rgb(var(--color-background));
+}
+
+.product-popup-modal__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  margin-left: auto;
+  padding: 1.2rem;
+  position: sticky;
+  top: 1.5rem;
+  z-index: 2;
+  border: 0.1rem solid rgba(var(--color-foreground), 0.1);
+  border-radius: 50%;
+  background-color: rgb(var(--color-background));
+  color: rgba(var(--color-foreground), 0.55);
+  cursor: pointer;
+}
+
+.product-popup-modal__content-info {
+  padding-right: 4.4rem;
+}
+
+.product-popup-modal__content-info > * {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Keep transparent PNG/WebP product images truly transparent. */
+.product-wrap .product__media-wrapper .global-media-settings,
+.product-wrap .product__media-wrapper .product-media-container,
+.product-wrap .product__media-wrapper .product-media-container.gradient,
+.product-wrap .product__media-wrapper .media {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+@media screen and (min-width: 750px) {
+  .product-wrap .product {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+    gap: 4rem;
+  }
+}
+product-info {
+  display: block;
+}
+
+.product-wrap {
+  position: relative;
+}
+
+.bg-texture {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.product-wrap .product {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 3rem;
+}
+
+.product__media-wrapper,
+.product__info-wrapper {
+  min-width: 0;
+}
+
+.product__image-wrap {
+  width: 100%;
+  background: transparent;
+}
+
+.product__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: transparent;
+}
+
+.product__info-wrapper {
+  padding: 0;
+}
+
+.product__info-container > * + * {
+  margin-top: 1.5rem;
+}
+
+.product__title {
+  margin: 0;
+  word-break: break-word;
+}
+
+.product__title > a {
+  display: none;
+}
+
+.product__description {
+  margin: 0;
+}
+
+.product__tax {
+  margin: 0;
+}
+
+.product-form {
+  display: block;
+}
+
+.product-form__input {
+  margin: 0 0 1.2rem;
+  border: 0;
+  padding: 0;
+}
+
+.product-form__buttons {
+  max-width: 100%;
+}
+
+.product-form__submit {
+  margin: 0;
+}
+
+.product-form__quantity .form__label {
+  display: block;
+  margin-bottom: 0.6rem;
+}
+
+.product__inventory {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.product__inventory .svg-wrapper,
+.product__inventory svg {
+  width: 15px;
+  height: 15px;
+}
+
+.product__accordion .accordion__content {
+  padding: 0 1rem;
+}
+
+.icon-with-text {
+  --icon-size: calc(var(--font-heading-scale) * 3rem);
+  --icon-spacing: calc(var(--font-heading-scale) * 1rem);
+}
+
+.icon-with-text--horizontal {
+  display: flex;
+  column-gap: 2rem;
+}
+
+.icon-with-text--vertical .icon-with-text__item {
+  margin-bottom: 1.6rem;
+}
+
+.icon-with-text__item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon-with-text .svg-wrapper,
+.icon-with-text img {
+  width: var(--icon-size);
+  height: var(--icon-size);
+}
+
+.product-popup-modal {
+  box-sizing: border-box;
+  opacity: 0;
+  position: fixed;
+  visibility: hidden;
+  z-index: -1;
+  inset: 0;
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  background: rgba(var(--color-foreground), 0.2);
+}
+
+.product-popup-modal[open] {
+  opacity: 1;
+  visibility: visible;
+  z-index: 101;
+}
+
+.product-popup-modal__content {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 92%;
+  height: 80%;
+  margin: 5rem auto 0;
+  padding: 0 1.5rem 0 3rem;
+  overflow: auto;
+  border-radius: var(--popup-corner-radius);
+  border: var(--popup-border-width) solid rgba(var(--color-foreground), var(--popup-border-opacity));
+  background-color: rgb(var(--color-background));
+}
+
+.product-popup-modal__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  margin-left: auto;
+  padding: 1.2rem;
+  position: sticky;
+  top: 1.5rem;
+  z-index: 2;
+  border: 0.1rem solid rgba(var(--color-foreground), 0.1);
+  border-radius: 50%;
+  background-color: rgb(var(--color-background));
+  color: rgba(var(--color-foreground), 0.55);
+  cursor: pointer;
+}
+
+.product-popup-modal__content-info {
+  padding-right: 4.4rem;
+}
+
+.product-popup-modal__content-info > * {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Ensure transparent product image backgrounds remain transparent. */
+.product-wrap .product__media-wrapper .global-media-settings,
+.product-wrap .product__media-wrapper .product-media-container,
+.product-wrap .product__media-wrapper .product-media-container.gradient,
+.product-wrap .product__media-wrapper .media {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+@media screen and (min-width: 750px) {
+  .product-wrap .product {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+    gap: 4rem;
+  }
+
+  .product__info-wrapper {
+    padding-left: 0;
+  }
+}
+product-info {
+  display: block;
+}
+
 .product {
   margin: 0;
 }
@@ -1491,4 +1917,27 @@ a.product__text {
   .recipient-form > input[type='checkbox']:checked + label .icon-checkmark {
     border: none;
   }
+}
+
+.product-wrap {
+  position: relative;
+  .bg-texture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.product-wrap .product {
+  padding-top: 200px;
+}
+
+/* Force product media backgrounds transparent for transparent PNG/WebP assets. */
+.product-wrap .product__media-wrapper .global-media-settings,
+.product-wrap .product__media-wrapper .product-media-container,
+.product-wrap .product__media-wrapper .product-media-container.gradient,
+.product-wrap .product__media-wrapper .media {
+  background: transparent;
 }
