@@ -1,0 +1,14 @@
+.product__simple-one {
+    background-color: rgba(90, 90, 249, 0.616);
+    height: 120vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1.fh1 {
+    margin: 0;
+    padding-top: 300px;
+    max-width: 490px;
+    text-align: center;
+}

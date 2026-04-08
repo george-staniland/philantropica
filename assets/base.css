@@ -3708,7 +3708,7 @@ header:not(.template-index) {
 }
 
 
-#MainContent:not(.template-index) {
+#MainContent:not(.template-index, .template-product) {
   padding-top: 106px;
 }
 

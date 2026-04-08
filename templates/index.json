@@ -125,6 +125,7 @@
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
+        "content_width": "standard",
         "color_scheme": "scheme-b7a19602-1e50-4373-8ea1-c1ad0fcf758f",
         "full_width": false,
         "padding_top": 0,
@@ -191,6 +192,7 @@
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
+        "content_width": "standard",
         "color_scheme": "scheme-b7a19602-1e50-4373-8ea1-c1ad0fcf758f",
         "full_width": false,
         "padding_top": 140,
@@ -201,7 +203,7 @@
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
-        "collection": "all",
+        "collection": "frontpage",
         "show_large_product_cards": false,
         "products_to_show": 3,
         "title": "",
@@ -285,6 +287,7 @@
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
+        "content_width": "standard",
         "color_scheme": "scheme-b7a19602-1e50-4373-8ea1-c1ad0fcf758f",
         "full_width": false,
         "padding_top": 200,

@@ -1,0 +1,28 @@
+<section
+  class="section-{{ section.id }}-padding  color-{{ section.settings.color_scheme }} product__simple-one "
+  data-section="{{ section.id }}"
+  data-product-id="{{ product.id }}"
+  data-update-url="true"
+  data-url="{{ product.url }}"
+>
+  {{ 'section-product-simple-one.css' | asset_url | stylesheet_tag }}
+
+  <h1 class="fh1">{{ product.title | escape }}</h1>
+
+</section>
+
+{% schema %}
+{
+  "name": "Product Info Original",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    }
+  ]
+}
+{% endschema %}
