@@ -1,0 +1,42 @@
+.heading-section {
+  position: relative;
+}
+
+.heading-section__inner {
+  position: relative;
+  text-align: center;
+  max-width: 1010px;
+  margin: 0 auto;
+}
+
+.heading-section__inner .rich-text__heading {
+  margin: 0;
+  z-index: 2;
+  position: relative;
+}
+
+.heading-section__overlay {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.heading-section__overlay--1 {
+  top: 0;
+  transform: translateY(-67%) rotate(-15deg);;
+  transform-origin: center;
+  right: 22%;
+}
+
+.heading-section__overlay--2 {
+  left: 22%;
+  bottom: 0;
+  transform-origin: center;
+  transform: translateY(62%) rotate(55deg);
+}
+
+.heading-section__overlay img {
+  display: block;
+  width: 180px;
+  height: auto;
+}

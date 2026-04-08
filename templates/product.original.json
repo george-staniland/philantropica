@@ -15,6 +15,18 @@
         "color_scheme": "scheme-1"
       }
     },
+    "heading_jWt6Qp": {
+      "type": "heading",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "heading": "<p>Philantropica is the world\u2019s first tax-deductible soft drink</p>",
+        "heading_size": "fh2",
+        "overlay_image_1": "",
+        "overlay_image_2": "",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
     "collapsible_content_xVw9Kg": {
       "type": "collapsible-content",
       "blocks": {
@@ -63,6 +75,7 @@
   },
   "order": [
     "main",
+    "heading_jWt6Qp",
     "collapsible_content_xVw9Kg"
   ]
 }
