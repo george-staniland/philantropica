@@ -3675,6 +3675,8 @@ details-disclosure > details {
 /* Header Custom */
 
 header {
+  z-index: 50;
+  position: relative;
   .header__menu_right {
    .header__icon--cart {
     display: none;

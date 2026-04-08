@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (overlayImage2) {
     gsap.to(overlayImage2, {
-      y: 60,
+      y: 40,
       x: -3,
       rotate: -20,
       duration: 3.2,

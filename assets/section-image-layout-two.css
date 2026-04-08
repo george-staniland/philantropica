@@ -1,0 +1,36 @@
+.image-layout-two {
+  position: relative;
+}
+
+.bg-image {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.bg-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  object-position: bottom;
+}
+
+.overlay-image {
+  position: relative;
+  margin: -35vh auto 0;
+  width: 75%;
+  border: 12px solid;
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgb(var(--color-background));
+  z-index: 1;
+}
+
+.overlay-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
