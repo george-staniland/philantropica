@@ -11,6 +11,7 @@
   --white: #FFF;
 }
 
+
 .product-card-wrapper .card,
 .contains-card--product {
   --border-radius: var(--product-card-corner-radius);
@@ -3681,6 +3682,20 @@ header {
   }
 }
 
+header .main-logo {
+  width: 180px;
+  height: auto;
+}
+
+header:not(.template-index) {
+  * {
+    color: var(--blue);
+  }
+  svg path {
+    fill: var(--blue);
+  }
+}
+
 .menu__r-item, .header__menu-item  {
   text-decoration: none;
   color: rgba(var(--color-foreground));
@@ -3690,4 +3705,9 @@ header {
 
 .product-card-large {
   background-color: blue;
+}
+
+
+#MainContent:not(.template-index) {
+  padding-top: 106px;
 }

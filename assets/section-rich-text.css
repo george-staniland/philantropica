@@ -39,6 +39,10 @@
   .rich-text__blocks {
     max-width: 78rem;
   }
+
+  .rich-text__blocks.content-width-medium {
+    max-width: 120rem;
+  }
 }
 
 .rich-text__blocks * {

@@ -9,21 +9,39 @@
  */
 {
   "sections": {
-    "banner": {
-      "type": "main-collection-banner",
+    "rich_text_jjNFAL": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_xQT8Km": {
+          "type": "heading",
+          "settings": {
+            "heading": "A small collection of unnecessary but excellent things.",
+            "heading_size": "fh1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_xQT8Km"
+      ],
+      "name": "t:sections.rich-text.presets.name",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "scheme-1"
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "content_width": "medium",
+        "color_scheme": "scheme-b7a19602-1e50-4373-8ea1-c1ad0fcf758f",
+        "full_width": true,
+        "padding_top": 140,
+        "padding_bottom": 140
       }
     },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
         "products_per_page": 16,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-b7a19602-1e50-4373-8ea1-c1ad0fcf758f",
+        "image_ratio": "square",
         "image_shape": "default",
         "show_secondary_image": false,
         "show_vendor": false,
@@ -31,15 +49,14 @@
         "quick_add": "none",
         "enable_filtering": true,
         "filter_type": "horizontal",
-        "enable_sorting": true,
-        "columns_mobile": "2",
+        "enable_sorting": false,
         "padding_top": 36,
         "padding_bottom": 36
       }
     }
   },
   "order": [
-    "banner",
+    "rich_text_jjNFAL",
     "product-grid"
   ]
 }

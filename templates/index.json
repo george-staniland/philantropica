@@ -158,7 +158,194 @@
         "columns_mobile": "1",
         "swipe_on_mobile": false,
         "padding_top": 0,
+        "padding_bottom": 100
+      }
+    },
+    "rich_text_6GDnAr": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_6DQdKt": {
+          "type": "heading",
+          "settings": {
+            "heading": "Philantropica Merch & Bundle store",
+            "heading_size": "fh2"
+          }
+        },
+        "button_AmiyEw": {
+          "type": "button",
+          "settings": {
+            "button_label": "Have a look",
+            "button_link": "shopify://collections",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_6DQdKt",
+        "button_AmiyEw"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-b7a19602-1e50-4373-8ea1-c1ad0fcf758f",
+        "full_width": false,
+        "padding_top": 140,
+        "padding_bottom": 0
+      }
+    },
+    "featured_collection_ffn6pB": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "collection": "all",
+        "show_large_product_cards": false,
+        "products_to_show": 3,
+        "title": "",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 3,
+        "enable_desktop_slider": false,
+        "full_width": true,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-b7a19602-1e50-4373-8ea1-c1ad0fcf758f",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
         "padding_bottom": 36
+      }
+    },
+    "image_layout_hN8q9R": {
+      "type": "image-layout",
+      "name": "Image layout",
+      "settings": {
+        "background": "shopify://shop_images/l1.jpg",
+        "main": "shopify://shop_images/l2.jpg",
+        "overlay": "shopify://shop_images/card.png"
+      }
+    },
+    "founding_members_Ecc7bN": {
+      "type": "founding-members",
+      "name": "Founding Members",
+      "settings": {
+        "heading": "Our founding members",
+        "background_image": "shopify://shop_images/b1-sml.jpg",
+        "corner_image_1": "shopify://shop_images/p1.png",
+        "corner_image_2": "shopify://shop_images/p3.png",
+        "corner_image_3": "shopify://shop_images/p2.png",
+        "corner_image_4": "shopify://shop_images/p4.png"
+      }
+    },
+    "rich_text_enx9nF": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_wMgKK6": {
+          "type": "heading",
+          "settings": {
+            "heading": "For the quietly generous/If generosity finds you",
+            "heading_size": "fh2"
+          }
+        },
+        "text_kfWdyB": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Donate to the Philantropica Fund. Every $5 will fund collection of 1,000 plastic bottles in weight, whilst supporting ocean health initiatives.</p>"
+          }
+        },
+        "button_bDgbL6": {
+          "type": "button",
+          "settings": {
+            "button_label": "Donate today",
+            "button_link": "shopify://collections",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_wMgKK6",
+        "text_kfWdyB",
+        "button_bDgbL6"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-b7a19602-1e50-4373-8ea1-c1ad0fcf758f",
+        "full_width": false,
+        "padding_top": 200,
+        "padding_bottom": 200
+      }
+    },
+    "vertical_carousel_dyr7hH": {
+      "type": "vertical-carousel",
+      "blocks": {
+        "image_LggPMB": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/s3.png"
+          }
+        },
+        "image_FjKwzf": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/s2.png"
+          }
+        },
+        "image_NWUKmT": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/s6.png"
+          }
+        },
+        "image_d9fmGB": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/s5.png"
+          }
+        },
+        "image_enb6aq": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/s3.png"
+          }
+        },
+        "image_wVLgAT": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/s2.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_LggPMB",
+        "image_FjKwzf",
+        "image_NWUKmT",
+        "image_d9fmGB",
+        "image_enb6aq",
+        "image_wVLgAT"
+      ],
+      "name": "Vertical Carousel",
+      "settings": {
+        "color_scheme": "scheme-b7a19602-1e50-4373-8ea1-c1ad0fcf758f",
+        "title": "The Philantropica universe",
+        "button_label": "Explore now",
+        "button_link": "shopify://collections/all",
+        "button_style_secondary": false
       }
     }
   },
@@ -166,6 +353,12 @@
     "image_banner_6zrW9m",
     "image_with_text_QYHMxn",
     "rich_text_kt8EF6",
-    "featured_collection_kVcTMw"
+    "featured_collection_kVcTMw",
+    "rich_text_6GDnAr",
+    "featured_collection_ffn6pB",
+    "image_layout_hN8q9R",
+    "founding_members_Ecc7bN",
+    "rich_text_enx9nF",
+    "vertical_carousel_dyr7hH"
   ]
 }

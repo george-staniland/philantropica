@@ -129,7 +129,7 @@
                     media_aspect_ratio: section.settings.image_ratio,
                     image_shape: section.settings.image_shape,
                     lazy_load: lazy_load,
-                    show_secondary_image: section.settings.show_secondary_image,
+                    show_secondary_image: false,
                     show_vendor: section.settings.show_vendor,
                     show_rating: section.settings.show_rating,
                     skip_styles: skip_card_product_styles,
@@ -253,6 +253,7 @@
       "type": "checkbox",
       "id": "show_large_product_cards",
       "label": "Show large product cards",
+      "info": "To use a product for this, add an image for it via its Metafield",
       "default": false
     },
     {

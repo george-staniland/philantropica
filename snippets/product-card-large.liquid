@@ -2,7 +2,10 @@
 
 {%- if card_product and card_product != empty -%}
   {%- liquid
-    assign product_image = card_product.featured_media
+    assign product_image = card_product.metafields.custom.large_product_card_image.value
+    if product_image == blank
+      assign product_image = card_product.featured_media
+    endif
     assign index_class = blank
     if card_index
       assign index_modulo = card_index | modulo: 2
