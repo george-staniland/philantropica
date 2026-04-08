@@ -358,6 +358,10 @@ class FacetRemove extends HTMLElement {
   closeFilter(event) {
     event.preventDefault();
     const form = this.closest('facet-filters-form') || document.querySelector('facet-filters-form');
+    if (!form) {
+      if (event.currentTarget && event.currentTarget.href) window.location.assign(event.currentTarget.href);
+      return;
+    }
     form.onActiveFilterClick(event);
   }
 }

@@ -3711,3 +3711,32 @@ header:not(.template-index) {
 #MainContent:not(.template-index) {
   padding-top: 106px;
 }
+
+/* Product Grid */
+.philantropica-custom-filter  {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 48px;
+}
+.philantropica-custom-filter__list {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.philantropica-custom-filter__list a {
+  color: black;
+  text-decoration: none;
+  line-height: 1;
+  transition: all .3s ease-in-out;
+}
+
+.philantropica-custom-filter__list a.is-active, .philantropica-custom-filter__list a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.5em;
+}
+
+.template-collection #product-grid {
+  row-gap: 80px !important;
+}

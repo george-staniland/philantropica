@@ -38,6 +38,47 @@
 
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}">
   {%- paginate collection.products by section.settings.products_per_page -%}
+    {% comment %} Tag filtering {% endcomment %}
+    {% if collection.all_tags.size > 0 %}
+      <section class="philantropica-custom-filter page-width">
+        <ul class="philantropica-custom-filter__list list-unstyled" role="list">
+          <li class="philantropica-custom-filter__item">
+            <facet-remove>
+              <a
+                href="{{ collection.url }}"
+                class="philantropica-custom-filter__link{% if current_tags == blank %} is-active{% endif %}"
+                {% if current_tags == blank %}
+                  aria-current="true"
+                {% endif %}
+              >
+                All
+              </a>
+            </facet-remove>
+          </li>
+          {% for tag in collection.all_tags %}
+            {% assign is_active_tag = false %}
+            {% if current_tags contains tag %}
+              {% assign is_active_tag = true %}
+            {% endif %}
+            <li class="philantropica-custom-filter__item">
+              <facet-remove>
+                <a
+                  href="{{ collection.url }}/{{ tag | handleize }}{% if collection.sort_by %}?sort_by={{ collection.sort_by | url_encode }}{% endif %}"
+                  class="philantropica-custom-filter__link{% if is_active_tag %} is-active{% endif %}"
+                  {% if is_active_tag %}
+                    aria-current="true"
+                  {% endif %}
+                >
+                  {{ tag | escape }}
+                </a>
+              </facet-remove>
+            </li>
+          {% endfor %}
+        </ul>
+      </section>
+    {% endif %}
+    {% comment %} End tag filtering {% endcomment %}
+
     {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
     {%- if section.settings.enable_sorting and section.settings.filter_type == 'vertical' -%}
       <facet-filters-form class="facets facets-vertical-sort page-width small-hide">

@@ -621,3 +621,11 @@
 .badge {
   color: var(--blue);
 }
+
+.product-card-wrapper .card__media .bg-texture {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
