@@ -3687,7 +3687,7 @@ header .main-logo {
   height: auto;
 }
 
-header:not(.template-index) {
+header:not(.template-index, .template-product) {
   * {
     color: var(--blue);
   }
