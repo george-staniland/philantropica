@@ -2,7 +2,7 @@
   display: flex;
   position: relative;
   line-height: 1;
-  padding: 1.5rem 0;
+  padding: 20px 0;
 }
 
 .accordion .summary__title {
@@ -47,10 +47,9 @@
 }
 
 .accordion__content {
-  margin-bottom: 1.5rem;
   word-break: break-word;
   overflow-x: auto;
-  padding: 0 0.6rem;
+  padding: 12px 0px 20px;
 }
 
 .accordion__content img {

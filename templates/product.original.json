@@ -15,27 +15,54 @@
         "color_scheme": "scheme-1"
       }
     },
-    "related-products": {
-      "type": "related-products",
+    "collapsible_content_xVw9Kg": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_nzGWYH": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What's Included",
+            "row_content": "<p>Philantropica is a still soft drink with a carefully balanced pineapple flavour. Bright, tropical and pleasantly restrained — sweet enough to enjoy. Drink up. Save the world. Look good doing it.</p>"
+          }
+        },
+        "collapsible_row_QqAdJ8": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Impact",
+            "row_content": "<p>Phasellus fermentum malesuada phasellus netus dictum aenean placerat egestas amet. Ornare taciti semper dolor tristique morbi. </p><p>Sem leo tincidunt aliquet semper eu lectus scelerisque quis. Sagittis vivamus mollis nisi mollis enim fermentum laoreet.</p>"
+          }
+        },
+        "collapsible_row_RWw3xD": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Foundation & Tax deduction",
+            "row_content": "<p>Philantropica is a still soft drink with a carefully balanced pineapple flavour. Bright, tropical and pleasantly restrained — sweet enough to enjoy. Drink up. Save the world. Look good doing it.</p>"
+          }
+        },
+        "collapsible_row_TXAW6z": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Ingredients",
+            "row_content": "<p>Philantropica is a still soft drink with a carefully balanced pineapple flavour. Bright, tropical and pleasantly restrained — sweet enough to enjoy. Drink up. Save the world. Look good doing it.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_nzGWYH",
+        "collapsible_row_QqAdJ8",
+        "collapsible_row_RWw3xD",
+        "collapsible_row_TXAW6z"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
       "settings": {
-        "heading": "You may also like",
-        "heading_size": "h2",
-        "products_to_show": 4,
-        "columns_desktop": 4,
-        "columns_mobile": "2",
-        "color_scheme": "scheme-1",
-        "image_ratio": "square",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "padding_top": 36,
-        "padding_bottom": 28
+        "color_scheme": "scheme-b7a19602-1e50-4373-8ea1-c1ad0fcf758f",
+        "padding_top": 420,
+        "padding_bottom": 68
       }
     }
   },
   "order": [
     "main",
-    "related-products"
+    "collapsible_content_xVw9Kg"
   ]
 }
