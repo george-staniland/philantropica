@@ -1,0 +1,29 @@
+.section__quote-block .quote-content {
+  margin: 0 auto;
+  max-width: 1017px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  * {
+    margin: 0;
+  }
+}
+
+.section__quote-block .quote-text {
+  margin: 0;
+  font-style: italic;
+  text-align: center;
+}
+
+
+
+.section__quote-block .quote-author {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Cotham Sans';
+  line-height: 1;
+  padding: 9px 12px;
+  background-color: var(--yellow);
+  border-radius: 12px;
+}

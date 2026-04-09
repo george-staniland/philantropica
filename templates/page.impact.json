@@ -9,21 +9,14 @@
  */
 {
   "sections": {
-    "main": {
-      "type": "main-page",
-      "settings": {
-        "padding_top": 28,
-        "padding_bottom": 28
-      }
-    },
     "rich_text_DYMeY7": {
       "type": "rich-text",
       "blocks": {
         "heading_qgJq6j": {
           "type": "heading",
           "settings": {
-            "heading": "impact",
-            "heading_size": "fh2"
+            "heading": "<p>Surface above. </p><p>Substance below.</p>",
+            "heading_size": "fh1"
           }
         }
       },
@@ -38,13 +31,110 @@
         "color_scheme": "scheme-b7a19602-1e50-4373-8ea1-c1ad0fcf758f",
         "full_width": true,
         "reveal_on_scroll": true,
-        "padding_top": 20,
+        "padding_top": 200,
+        "padding_bottom": 0
+      }
+    },
+    "image_NUXCG8": {
+      "type": "image",
+      "name": "Image",
+      "settings": {
+        "image": "shopify://shop_images/tp.jpg",
+        "width": "medium",
+        "padding_top": 240,
+        "padding_bottom": 120
+      }
+    },
+    "rich_text_CMkyMY": {
+      "type": "rich-text",
+      "blocks": {
+        "text_UFyhpT": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Philantropica may look like pure indulgence. Beneath the surface sits something else entirely. Every Philantropica purchase helps fund the removal of ocean-bound plastic before it reaches the sea.</p><p>Philantropica is 100% not-for-profit and all proceeds go to the Philantropica Fund, supporting plastic collection projects and ocean health initiatives.</p>"
+          }
+        },
+        "heading_mBFJw4": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>There are no beaches on Mars.</p>",
+            "heading_size": "fh4"
+          }
+        },
+        "text_9ntT4M": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The ocean covers 70% of the planet, produces half the oxygen we breathe, feeds 3 billion people, and is the world’s largest carbon sink. What happens beneath the surface affects everyone above it. </p><p>With this impending doom, some people are making plans to go live on a rock in space with temperatures of -100°C. But we say: no beach, no fun.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_UFyhpT",
+        "heading_mBFJw4",
+        "text_9ntT4M"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "content_width": "standard",
+        "color_scheme": "scheme-b7a19602-1e50-4373-8ea1-c1ad0fcf758f",
+        "full_width": true,
+        "reveal_on_scroll": true,
+        "padding_top": 0,
+        "padding_bottom": 20
+      }
+    },
+    "quote_block_PFjVKY": {
+      "type": "quote-block",
+      "name": "Quote block",
+      "settings": {
+        "quote": "<p><strong>‘</strong>After almost 100 years on the planet, I now understand the most important place on Earth is not on land, but at sea’</p>",
+        "author": "Sir David Attenborough",
+        "color_scheme": "scheme-b7a19602-1e50-4373-8ea1-c1ad0fcf758f",
+        "padding_top": 88,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_BVEyHe": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_BxPwkH": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Built by Ocean Bottle</p>",
+            "heading_size": "fh4"
+          }
+        },
+        "text_DkEK6r": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Philanthropica is crafted by Ocean Bottle, the award-winning impact brand behind one of the world’s largest plastic collection programmes.</p><p>Plastic is collected in coastal regions where waste management systems are limited and the risk of ocean leakage is highest.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_BxPwkH",
+        "text_DkEK6r"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "content_width": "standard",
+        "color_scheme": "scheme-b7a19602-1e50-4373-8ea1-c1ad0fcf758f",
+        "full_width": true,
+        "reveal_on_scroll": true,
+        "padding_top": 120,
         "padding_bottom": 20
       }
     }
   },
   "order": [
-    "main",
-    "rich_text_DYMeY7"
+    "rich_text_DYMeY7",
+    "image_NUXCG8",
+    "rich_text_CMkyMY",
+    "quote_block_PFjVKY",
+    "rich_text_BVEyHe"
   ]
 }

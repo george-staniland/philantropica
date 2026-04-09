@@ -1,0 +1,32 @@
+.section__image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-size-wrap {
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.width--small {
+  max-width: 720px;
+}
+
+.width--medium {
+  width: clamp(500px, 65vw, 1300px);
+}
+
+.width--large {
+  max-width: 1200px;
+}
+
+.aspectholder {
+  width: 100%;
+}
+
+.aspectholder img {
+  display: block;
+  width: 100%;
+  height: auto;
+}

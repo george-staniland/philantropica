@@ -57,7 +57,7 @@
         "heading_izqQ3G": {
           "type": "heading",
           "settings": {
-            "heading": "<p>Soft Drink.<br/>Hard Impact.</p>",
+            "heading": "<p>Soft Drink. <br/>Hard Impact.</p>",
             "heading_size": "fh2"
           }
         },
@@ -96,6 +96,7 @@
         "mobile_content_alignment": "center",
         "section_color_scheme": "scheme-b7a19602-1e50-4373-8ea1-c1ad0fcf758f",
         "color_scheme": "scheme-b7a19602-1e50-4373-8ea1-c1ad0fcf758f",
+        "overlay_previous_section": false,
         "padding_top": 240,
         "padding_bottom": 240
       }
@@ -106,7 +107,7 @@
         "heading_WDX3Lx": {
           "type": "heading",
           "settings": {
-            "heading": "How good do you want your legacy to taste?",
+            "heading": "<p>How good do you want your legacy to taste?</p>",
             "heading_size": "fh2"
           }
         },
@@ -128,6 +129,7 @@
         "content_width": "standard",
         "color_scheme": "scheme-b7a19602-1e50-4373-8ea1-c1ad0fcf758f",
         "full_width": false,
+        "reveal_on_scroll": true,
         "padding_top": 0,
         "padding_bottom": 104
       }
@@ -168,7 +170,7 @@
         "heading_6DQdKt": {
           "type": "heading",
           "settings": {
-            "heading": "Philantropica Merch & Bundle store",
+            "heading": "<p>Philantropica Merch & Bundle store</p>",
             "heading_size": "fh2"
           }
         },
@@ -195,6 +197,7 @@
         "content_width": "standard",
         "color_scheme": "scheme-b7a19602-1e50-4373-8ea1-c1ad0fcf758f",
         "full_width": false,
+        "reveal_on_scroll": true,
         "padding_top": 140,
         "padding_bottom": 0
       }
@@ -256,7 +259,7 @@
         "heading_wMgKK6": {
           "type": "heading",
           "settings": {
-            "heading": "For the quietly generous/If generosity finds you",
+            "heading": "<p>For the quietly generous/If generosity finds you</p>",
             "heading_size": "fh2"
           }
         },
@@ -290,6 +293,7 @@
         "content_width": "standard",
         "color_scheme": "scheme-b7a19602-1e50-4373-8ea1-c1ad0fcf758f",
         "full_width": false,
+        "reveal_on_scroll": true,
         "padding_top": 200,
         "padding_bottom": 200
       }

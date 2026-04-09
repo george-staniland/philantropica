@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
+{
   "sections": {
     "main": {
       "type": "main-product",
@@ -50,7 +50,7 @@
         "heading_f7yE6Q": {
           "type": "heading",
           "settings": {
-            "heading": "Philantropica Dept. of Merch & Bundles",
+            "heading": "<p>Philantropica Dept. of Merch & Bundles</p>",
             "heading_size": "fh2"
           }
         },

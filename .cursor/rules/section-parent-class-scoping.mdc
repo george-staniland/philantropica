@@ -1,0 +1,14 @@
+---
+description: Require a section parent class and scoped CSS selectors
+alwaysApply: true
+---
+
+# Section parent class and CSS scoping
+
+When creating or editing HTML / Markup , especially Shopify Sections
+
+- Add a top-level parent class on the section wrapper using `section__<section-handle>` (example: `section__quote-block`).
+- Scope all section CSS selectors under that parent class.
+- Use descendant selectors for section elements (example: `.section__quote-block .quote-author`).
+- Avoid unscoped element class rules in any CSS created
+- Keep this pattern consistent for new sections by default.
