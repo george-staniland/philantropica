@@ -9,26 +9,19 @@
  */
 {
   "sections": {
-    "main": {
-      "type": "main-page",
-      "settings": {
-        "padding_top": 28,
-        "padding_bottom": 28
-      }
-    },
-    "rich_text_qmrkMR": {
+    "rich_text_N3cbhX": {
       "type": "rich-text",
       "blocks": {
-        "heading_Rr9cKc": {
+        "heading_WM9cN4": {
           "type": "heading",
           "settings": {
-            "heading": "FAQz",
-            "heading_size": "fh2"
+            "heading": "<p>Naturally,<br/>questions arise</p>",
+            "heading_size": "fh1"
           }
         }
       },
       "block_order": [
-        "heading_Rr9cKc"
+        "heading_WM9cN4"
       ],
       "name": "t:sections.rich-text.presets.name",
       "settings": {
@@ -38,13 +31,12 @@
         "color_scheme": "scheme-b7a19602-1e50-4373-8ea1-c1ad0fcf758f",
         "full_width": true,
         "reveal_on_scroll": true,
-        "padding_top": 20,
-        "padding_bottom": 20
+        "padding_top": 200,
+        "padding_bottom": 0
       }
     }
   },
   "order": [
-    "main",
-    "rich_text_qmrkMR"
+    "rich_text_N3cbhX"
   ]
 }
