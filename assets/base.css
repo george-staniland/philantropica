@@ -2385,9 +2385,7 @@ input[type='checkbox'] {
 }
 
 /* section-header */
-.section-header.shopify-section-group-header-group {
-  z-index: 3;
-}
+
 
 .shopify-section-header-sticky {
   position: sticky;
@@ -2406,13 +2404,6 @@ input[type='checkbox'] {
   transition: top 0.15s ease-out;
 }
 
-.shopify-section-group-header-group {
-  z-index: 4;
-}
-
-.section-header ~ .shopify-section-group-header-group {
-  z-index: initial;
-}
 
 /* Main Header Layout */
 .header-wrapper {
@@ -2464,11 +2455,6 @@ input[type='checkbox'] {
     column-gap: 2rem;
   }
 
-  .header--middle-center:not(.drawer-menu) {
-    grid-template-areas: 'navigation heading icons';
-    grid-template-columns: 1fr auto 1fr;
-    column-gap: 2rem;
-  }
 
   .header--middle-center a.header__heading-link {
     text-align: center;
@@ -3671,40 +3657,6 @@ details-disclosure > details {
   }
 }
 
-
-/* Header Custom */
-
-header {
-  z-index: 50;
-  position: relative;
-  .header__menu_right {
-   .header__icon--cart {
-    display: none;
-   }
-  }
-}
-
-header .main-logo {
-  width: 180px;
-  height: auto;
-}
-
-header:not(.template-index, .template-product) {
-  * {
-    color: var(--blue);
-  }
-  svg path {
-    fill: var(--blue);
-  }
-}
-
-.menu__r-item, .header__menu-item  {
-  text-decoration: none;
-  color: rgba(var(--color-foreground));
-  padding: 1.2rem;
-  font-size: 20px;
-}
-
 .product-card-large {
   background-color: blue;
 }
@@ -3741,4 +3693,74 @@ header:not(.template-index, .template-product) {
 
 .template-collection #product-grid {
   row-gap: 80px !important;
+}
+
+
+.header-primary {
+  
+}
+
+/* Header Custom */
+
+
+.header-primary {
+  position: fixed;
+  padding: 27px var(--pm) 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 20;
+  grid-template-areas: 'navigation heading icons';
+  grid-template-columns: 1fr auto 1fr;
+  column-gap: 2rem;
+}
+
+.header-primary .header__menu_right .header__icon--cart {
+  display: none;
+}
+
+.header-primary .main-logo {
+  width: 180px;
+  height: auto;
+}
+
+.header-primary:not(.template-index, .template-product) {
+  * {
+    color: var(--blue);
+  }
+  svg path {
+    fill: var(--blue);
+  }
+}
+
+
+.phil-primary-nav-plain {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 24px;
+}
+
+.phil-nav__link {
+  text-decoration: none;
+  color: rgba(var(--color-foreground));
+  font-size: 20px;
+  line-height: 1;
+  display: inline-block;
+  transition: all .23s ease-in-out;
+}
+
+.phil-nav__link:hover,
+.phil-nav__link[aria-current='page'] {
+  text-decoration: underline;
+  text-underline-offset: 0.4em;
+  text-decoration-thickness: 2px;
+}
+
+
+
+.header-primary .menu__right {
+  display: flex;
+  gap: 24px;
 }
