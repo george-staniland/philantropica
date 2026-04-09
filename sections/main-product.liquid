@@ -71,7 +71,7 @@
         {%- endif -%}
       </div>
 
-      <div class="product__details {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+      <div class="product__details">
         <section
           id="ProductInfo-{{ section.id }}"
           class="product__info-container"
@@ -188,6 +188,29 @@
                 {%- if product.description != blank -%}
                   <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
                     {{ product.description }}
+
+                    {% comment %} Product tags {% endcomment %}
+                    {%- assign product_tag_callouts = product.metafields.custom.product_tag_callouts.value -%}
+                    <div class="card__tag-callouts">
+
+                      {% if product_tag_callouts != blank %}
+                        {% for tag_callout in product_tag_callouts %}
+                          <span class="product-card__tag">{{ tag_callout }}</span>
+                        {% endfor %}
+                      {% endif %}
+        
+                      {%- assign available_count = product.selected_or_first_available_variant.inventory_quantity | default: 0 -%}
+                      <span class="product-card__tag">
+                        {% if available_count > 0 %}
+                          {{ available_count }} available
+                        {% else %}
+                          Sold out
+                        {% endif %}
+                      </span>
+        
+                    </div>
+                    {% comment %} End Product tags   {% endcomment %}
+
                   </div>
                 {%- endif -%}
               {%- when 'sku' -%}
