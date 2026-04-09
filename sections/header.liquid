@@ -47,7 +47,7 @@
       assign localization_forms = true
     endif
   -%}
-  <header class="header header-primary template-{{ template.name | handleize }} page-{{ request.page_type | handleize }}">
+  <header class="header header-primary template-{{ template.name | handleize }} page-{{ request.page_type | handleize }} template-suffix-{{ template.suffix | handleize }}">
   
 
     {%- if section.settings.logo_position != 'middle-center' -%}

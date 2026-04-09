@@ -2999,6 +2999,26 @@ details-disclosure > details {
   background-attachment: fixed;
 }
 
+body.template-suffix-faq {
+  position: relative;
+  min-height: 100%;
+}
+
+body.template-suffix-faq::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: url('https://cdn.shopify.com/s/files/1/0977/4176/7000/files/b1-sml.jpg');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+body.template-suffix-faq .gradient, body.template-suffix-faq footer  {
+  background-color: transparent;
+}
+
 @media screen and (forced-colors: active) {
   .icon {
     color: CanvasText;
@@ -3726,7 +3746,7 @@ details-disclosure > details {
   height: auto;
 }
 
-.header-primary:not(.template-index, .template-product) {
+.header-primary:not(.template-index, .template-product,.template-suffix-faq  ) {
   * {
     color: var(--blue);
   }
