@@ -6,10 +6,62 @@ function getFocusableElements(container) {
   );
 }
 
-// How It works block and  PDP page
+
 document.addEventListener('DOMContentLoaded', () => {
 
-  // How It works
+
+  // Accordion
+  const accordionSections = document.querySelectorAll('.section__accordion');
+
+  accordionSections.forEach((section) => {
+    const rows = Array.from(section.querySelectorAll('.accordion-row'));
+
+    const closeRow = (row) => {
+      const trigger = row.querySelector('.accordion-trigger');
+      const content = row.querySelector('.accordion-content');
+
+      row.classList.remove('is-open');
+      trigger.setAttribute('aria-expanded', 'false');
+      content.style.maxHeight = '0px';
+    };
+
+    const openRow = (row) => {
+      const trigger = row.querySelector('.accordion-trigger');
+      const content = row.querySelector('.accordion-content');
+      const inner = row.querySelector('.accordion-content-inner');
+
+      row.classList.add('is-open');
+      trigger.setAttribute('aria-expanded', 'true');
+      content.style.maxHeight = `${inner.scrollHeight}px`;
+    };
+
+    rows.forEach((row) => {
+      const trigger = row.querySelector('.accordion-trigger');
+
+      trigger.addEventListener('click', () => {
+        const isOpen = row.classList.contains('is-open');
+
+        rows.forEach((otherRow) => closeRow(otherRow));
+
+        if (!isOpen) {
+          openRow(row);
+        }
+      });
+    });
+
+    window.addEventListener('resize', () => {
+      rows.forEach((row) => {
+        if (!row.classList.contains('is-open')) return;
+
+        const content = row.querySelector('.accordion-content');
+        const inner = row.querySelector('.accordion-content-inner');
+        content.style.maxHeight = `${inner.scrollHeight}px`;
+      });
+    });
+  });
+  // End accordion
+
+  // How It works Section
   const howItWorksSections = gsap.utils.toArray('.section__how-it-works');
   const howItWorksObserver = new IntersectionObserver(
     (entries, observer) => {

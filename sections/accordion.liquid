@@ -1,0 +1,81 @@
+{{ 'section-accordion.css' | asset_url | stylesheet_tag }}
+
+<section class=" gradient section__accordion">
+  <div class="accordion-wrap content-container">
+    {%- for block in section.blocks -%}
+      <div class="accordion-row" {{ block.shopify_attributes }}>
+        <button
+          type="button"
+          class="accordion-trigger"
+          id="AccordionTrigger-{{ section.id }}-{{ block.id }}"
+          aria-expanded="false"
+          aria-controls="AccordionContent-{{ section.id }}-{{ block.id }}"
+        >
+          <span class="accordion-title fh4">{{ block.settings.title | escape }}</span>
+          <span class="accordion-icons" aria-hidden="true">
+            <span class="icon-plus">+</span>
+            <span class="icon-minus">-</span>
+          </span>
+        </button>
+
+        <div
+          class="accordion-content"
+          id="AccordionContent-{{ section.id }}-{{ block.id }}"
+          role="region"
+          aria-labelledby="AccordionTrigger-{{ section.id }}-{{ block.id }}"
+        >
+          <div class="accordion-content-inner fb rte">
+            {{ block.settings.paragraph }}
+          </div>
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Accordion",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+  ],
+  "blocks": [
+    {
+      "type": "accordion_row",
+      "name": "Accordion Row",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "paragraph",
+          "label": "Paragraph"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Accordion",
+      "blocks": [
+        {
+          "type": "accordion_row"
+        },
+        {
+          "type": "accordion_row"
+        },
+        {
+          "type": "accordion_row"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
