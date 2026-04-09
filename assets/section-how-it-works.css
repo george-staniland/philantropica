@@ -1,0 +1,51 @@
+.section__how-it-works .works-wrap {
+  margin: 0 auto;
+  padding: 0 var(--pm);
+  max-width: 1600px;
+}
+
+.section__how-it-works .works-title {
+  margin: 0;
+  max-width: 78rem;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+.section__how-it-works .card-grid {
+  display: grid;
+  gap: 12px;
+}
+
+@media screen and (min-width: 996px) {
+  .section__how-it-works .card-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.section__how-it-works .works-card {
+  grid-column: span 1;
+  overflow: hidden;
+  background-color: red;
+  aspect-ratio: 1/1;
+  border-radius: 20px;
+  position: relative;
+}
+
+.section__how-it-works .card-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.section__how-it-works .card-badge-info {
+  position: absolute;
+  left: 15px;
+  bottom: 15px;
+  line-height: 1;
+  font-size: 12px;
+  color: white;
+  background-color: var(--blue);
+  padding: 9px 10px 8px;
+  border-radius: 12px;
+  margin: 0;
+}

@@ -163,7 +163,127 @@
       "settings": {
         "color_scheme": "scheme-b7a19602-1e50-4373-8ea1-c1ad0fcf758f",
         "padding_top": 120,
+        "padding_bottom": 0
+      }
+    },
+    "how_it_works_RYmpGK": {
+      "type": "how-it-works",
+      "blocks": {
+        "image_card_PMqbKp": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/how_it_works.jpg",
+            "step_text": "You buy a product"
+          }
+        },
+        "image_card_aFQRay": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/how_it_works.jpg",
+            "step_text": "We work with a network of partners"
+          }
+        },
+        "image_card_jKgYQQ": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/how_it_works.jpg",
+            "step_text": "Collection scales with purchase"
+          }
+        },
+        "image_card_ENPYfd": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/how_it_works.jpg",
+            "step_text": "Local collectors get paid fairly"
+          }
+        },
+        "image_card_eXDxPb": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/how_it_works.jpg",
+            "step_text": "Scan your bottle to see your impact"
+          }
+        }
+      },
+      "block_order": [
+        "image_card_PMqbKp",
+        "image_card_aFQRay",
+        "image_card_jKgYQQ",
+        "image_card_ENPYfd",
+        "image_card_eXDxPb"
+      ],
+      "name": "How It Works",
+      "settings": {
+        "title": "How it works",
+        "color_scheme": "scheme-b7a19602-1e50-4373-8ea1-c1ad0fcf758f",
+        "padding_top": 120,
         "padding_bottom": 36
+      }
+    },
+    "rich_text_EPnGRt": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_AFfJge": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Improving livelihoods. Protecting environments.</p>",
+            "heading_size": "fh4"
+          }
+        },
+        "text_xrGwHd": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our plastic collection programmes not only alleviate communities from living in plastic waste, they also support livelihoods. From financial literacy to health camps to education support centres and fair incomes for plastic collected, this is an integral part of our mission.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_AFfJge",
+        "text_xrGwHd"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "content_width": "standard",
+        "color_scheme": "scheme-b7a19602-1e50-4373-8ea1-c1ad0fcf758f",
+        "full_width": true,
+        "reveal_on_scroll": true,
+        "padding_top": 120,
+        "padding_bottom": 120
+      }
+    },
+    "rich_text_t8dXhP": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_HkAJXi": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Let your legacy taste good</p>",
+            "heading_size": "fh4"
+          }
+        },
+        "text_zGEVyE": {
+          "type": "text",
+          "settings": {
+            "text": "<p>What would happen if every brand gave 1% of revenue to the planet as the cost of doing business? Within a generation we could dramatically reduce ocean plastic leakage, restore ecosystems, and accelerate climate solutions.  Philantropica is a statement - designed to challenge consumer brands and what they do for the world around us.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_HkAJXi",
+        "text_zGEVyE"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "content_width": "standard",
+        "color_scheme": "scheme-b7a19602-1e50-4373-8ea1-c1ad0fcf758f",
+        "full_width": true,
+        "reveal_on_scroll": true,
+        "padding_top": 0,
+        "padding_bottom": 200
       }
     }
   },
@@ -173,6 +293,9 @@
     "rich_text_CMkyMY",
     "quote_block_PFjVKY",
     "rich_text_BVEyHe",
-    "info_cards_icQpJz"
+    "info_cards_icQpJz",
+    "how_it_works_RYmpGK",
+    "rich_text_EPnGRt",
+    "rich_text_t8dXhP"
   ]
 }

@@ -6,9 +6,47 @@ function getFocusableElements(container) {
   );
 }
 
-// PDP page
+// How It works block and  PDP page
 document.addEventListener('DOMContentLoaded', () => {
- 
+
+  // How It works
+  const howItWorksSections = gsap.utils.toArray('.section__how-it-works');
+  const howItWorksObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        const worksCards = gsap.utils.toArray('.works-card', entry.target);
+
+        gsap.to(worksCards, {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: 'power1.out',
+          stagger: 0.14,
+        });
+
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      threshold: 0.9,
+    }
+  );
+
+  howItWorksSections.forEach((section) => {
+    const worksCards = gsap.utils.toArray('.works-card', section);
+
+    gsap.set(worksCards, {
+      y: 40,
+      opacity: 0,
+    });
+
+    howItWorksObserver.observe(section);
+  });
+  
+  // PDP
+
   var pdpSwiper = new Swiper(".pdp-swiper", {
     slidesPerView: 2.1,
     spaceBetween: 30,
