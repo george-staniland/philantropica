@@ -6,9 +6,9 @@ function getFocusableElements(container) {
   );
 }
 
+// PDP page
 document.addEventListener('DOMContentLoaded', () => {
  
-
   var pdpSwiper = new Swiper(".pdp-swiper", {
     slidesPerView: 2.1,
     spaceBetween: 30,
@@ -18,6 +18,22 @@ document.addEventListener('DOMContentLoaded', () => {
       clickable: true,
     },
   });
+
+
+  gsap.to('.product .product__image', {
+    opacity: 1,
+    duration: .3,
+    delay: 0.2,
+  })
+
+  gsap.to('.product .product__image', {
+    duration: 1.7,
+    x: 0,
+    y:0,
+    rotate: 0,
+    ease: 'elastic.out(1,0.4)',
+    delay: 0.2,
+  })
 });
 
 

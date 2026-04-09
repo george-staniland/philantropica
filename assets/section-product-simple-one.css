@@ -68,7 +68,6 @@ h1.fh2 {
 }
 
 .product__simple-one .card__tag-callouts {
-    position: static !important;
     gap: 8px;
     display: flex;
     align-items: flex-end;

@@ -1,6 +1,6 @@
 <product-info
   id="MainProduct-{{ section.id }}"
-  class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}"
+  class="section-{{ section.id }}-padding pdp-original gradient color-{{ section.settings.color_scheme }}"
   data-section="{{ section.id }}"
   data-product-id="{{ product.id }}"
   data-update-url="true"
@@ -708,15 +708,18 @@
   </div>
 
   {% assign pic_count = product.images.size | minus: 1 %}
-  <section class="product-image-carousel" data-pic-root>
+  {% if product.images.size > 1  %}
+  <section class="product-image-carousel" >
     {% if pic_count == 1 %}
-      <div class="imgs-static">
+      <div class="product-img-static">
+        <div class="aspectholder">
         {% assign static_img = product.images[1] %}
         {{
           static_img
           | image_url: width: 1600
-          | image_tag: loading: 'lazy', class: 'pic-i', alt: static_img.alt
+          | image_tag: loading: 'lazy', alt: static_img.alt
         }}
+        </div>
       </div>
     {% elsif pic_count > 1 %}
       <div class="swiper pdp-swiper" >
@@ -733,10 +736,11 @@
             </div>
           {% endfor %}
         </div>
-        <div class="swiper-pagination pic-pg"></div>
+        <div class="swiper-pagination"></div>
       </div>
     {% endif %}
   </section>
+  {% endif %}
 
 </product-info>
 
