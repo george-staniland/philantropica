@@ -3696,8 +3696,8 @@ details-disclosure > details {
 }
 
 
-.header-primary {
-  
+.price__badge-sold-out {
+  display: none !important;
 }
 
 /* Header Custom */

@@ -6,6 +6,21 @@ function getFocusableElements(container) {
   );
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+ 
+
+  var pdpSwiper = new Swiper(".pdp-swiper", {
+    slidesPerView: 2.1,
+    spaceBetween: 30,
+    centeredSlides: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+});
+
+
 class SectionId {
   static #separator = '__';
 
@@ -1360,3 +1375,6 @@ function initVerticalCarousels() {
 
 document.addEventListener('DOMContentLoaded', initVerticalCarousels);
 document.addEventListener('shopify:section:load', initVerticalCarousels);
+
+
+
