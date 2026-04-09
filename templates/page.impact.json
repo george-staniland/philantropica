@@ -126,7 +126,44 @@
         "full_width": true,
         "reveal_on_scroll": true,
         "padding_top": 120,
-        "padding_bottom": 20
+        "padding_bottom": 0
+      }
+    },
+    "info_cards_icQpJz": {
+      "type": "info-cards",
+      "blocks": {
+        "card_7zRVAx": {
+          "type": "card",
+          "settings": {
+            "heading": "56,562,327 lbs plastic collected",
+            "paragraph": "<p>Equivalent to over 2 billion plastic</p>"
+          }
+        },
+        "card_yUCkj8": {
+          "type": "card",
+          "settings": {
+            "heading": "Collection programs across 7 countries",
+            "paragraph": "<p>Supporting over 405 communities, with 8,310 collectors earning income through the work</p>"
+          }
+        },
+        "card_gWVTk8": {
+          "type": "card",
+          "settings": {
+            "heading": "",
+            "paragraph": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_7zRVAx",
+        "card_yUCkj8",
+        "card_gWVTk8"
+      ],
+      "name": "Info Cards",
+      "settings": {
+        "color_scheme": "scheme-b7a19602-1e50-4373-8ea1-c1ad0fcf758f",
+        "padding_top": 120,
+        "padding_bottom": 36
       }
     }
   },
@@ -135,6 +172,7 @@
     "image_NUXCG8",
     "rich_text_CMkyMY",
     "quote_block_PFjVKY",
-    "rich_text_BVEyHe"
+    "rich_text_BVEyHe",
+    "info_cards_icQpJz"
   ]
 }

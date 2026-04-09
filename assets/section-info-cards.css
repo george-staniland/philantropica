@@ -1,0 +1,33 @@
+.section__info-cards .cards-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0 auto;
+}
+
+.section__info-cards .card {
+  border: 2px solid var(--blue);
+  background-color: white;
+  border-radius: 20px;
+  padding: 24px 24px;
+}
+
+
+
+.section__info-cards .card-heading {
+  margin: 0;
+  padding-bottom: 40px;
+}
+
+.section__info-cards .card-paragraph {
+  margin: 0;
+}
+
+@media screen and (min-width: 990px) {
+  .section__info-cards .cards-wrap {
+      max-width: 78rem;
+  }
+  .section__info-cards .card-paragraph {
+    max-width: 90%;
+  }
+}
