@@ -49,7 +49,26 @@
     endif
   -%}
   <header class="header header-primary template-{{ template.name | handleize }} page-{{ request.page_type | handleize }} template-suffix-{{ template.suffix | handleize }}">
-  
+    {%- assign phil_primary_menu = section.settings.menu -%}
+    {%- assign right_menu = linklists[section.settings.menu_right] -%}
+
+    <div class="header-mobile-menu-wrap" role="navigation" aria-label="Mobile menu">
+      {%- if phil_primary_menu != blank -%}
+        {%- for link in phil_primary_menu.links -%}
+          <a href="{{ link.url }}" class="header-mobile-menu-link" {% if link.current %}aria-current="page"{% endif %}>
+            {{ link.title | escape }}
+          </a>
+        {%- endfor -%}
+      {%- endif -%}
+      {%- if right_menu != blank -%}
+        {%- for link in right_menu.links -%}
+          <a href="{{ link.url }}" class="header-mobile-menu-link" {% if link.current %}aria-current="page"{% endif %}>
+            {{ link.title | escape }}
+          </a>
+        {%- endfor -%}
+      {%- endif -%}
+    </div>
+
 
     {%- if section.settings.logo_position != 'middle-center' -%}
       {%- if request.page_type == 'index' -%}
@@ -67,7 +86,6 @@
       {%- endif -%}
     {%- endif -%}
 
-    {%- assign phil_primary_menu = section.settings.menu -%}
     {%- if phil_primary_menu != blank -%}
       <section class="phil-primary-nav-plain" role="navigation" aria-label="Primary">
         {%- for link in phil_primary_menu.links -%}
@@ -112,7 +130,6 @@
     {%- endif -%}
 
     <div class="header__icons  header__menu_right {% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
-      {%- assign right_menu = linklists[section.settings.menu_right] -%}
       {%- if section.settings.menu_right != blank and right_menu != blank -%}
         <nav class="menu__right" role="navigation">
             {%- for link in right_menu.links -%}
