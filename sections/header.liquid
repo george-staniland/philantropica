@@ -71,12 +71,17 @@
     {%- if phil_primary_menu != blank -%}
       <section class="phil-primary-nav-plain" role="navigation" aria-label="Primary">
         {%- for link in phil_primary_menu.links -%}
+          {%- assign link_has_product_children = false -%}
+          {%- for child_link in link.links -%}
+            {%- if child_link.type == 'product_link' and child_link.object != blank -%}
+              {%- assign link_has_product_children = true -%}
+              {%- break -%}
+            {%- endif -%}
+          {%- endfor -%}
           <a
             href="{{ link.url }}"
-            class="phil-nav__link "
-            {% if link.links.size > 0 %}
-              data-menu-overlay-trigger
-              data-menu-overlay-parent-index="{{ forloop.index0 }}"
+            class="phil-nav__link{% if link_has_product_children %} phil-nav__link--overlay-trigger{% endif %}"
+            {% if link_has_product_children %}
               aria-haspopup="dialog"
             {% endif %}
             {% if link.current %}

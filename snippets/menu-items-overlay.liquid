@@ -4,12 +4,11 @@
 {% enddoc %}
 
 {%- if menu != blank -%}
-  <div class="section__menu-items-overlay menu-items-overlay" data-menu-overlay-root hidden aria-hidden="true">
+  <div class="section__menu-items-overlay menu-items-overlay" hidden aria-hidden="true">
     <button
       class="menu-items-overlay__backdrop"
       type="button"
       aria-label="{{ 'accessibility.close' | t }}"
-      data-menu-overlay-close
     ></button>
     <div class="menu-items-overlay__content" role="dialog" aria-modal="true" aria-label="Menu products">
       {%- for parent_link in menu.links -%}
@@ -22,27 +21,58 @@
         {%- endfor -%}
 
         {%- if has_product_children -%}
-          <div class="menu-items-overlay__panel" data-menu-overlay-panel="{{ forloop.index0 }}" hidden>
+          <div class="menu-items-overlay__panel" hidden>
             <div class="menu-items-overlay__grid">
               {%- for child_link in parent_link.links -%}
                 {%- if child_link.type == 'product_link' and child_link.object != blank -%}
                   {%- assign product = child_link.object -%}
                   {%- assign selected_variant = product.selected_or_first_available_variant -%}
-                  <article class="menu-items-overlay__product-card">
+                  {%- assign card_image = product.featured_image -%}
+                  {%- if product.metafields.custom.large_product_card_image != blank -%}
+                    {%- assign card_image = product.metafields.custom.large_product_card_image.value -%}
+                  {%- endif -%}
+                  {%- assign product_not_available_yet = product.metafields.custom.product_not_available_yet.value -%}
+                  <article class="menu-items-overlay__product-card{% if product_not_available_yet %} product-nay{% endif %}">
                     <a class="menu-items-overlay__product-image-link" href="{{ product.url }}">
-                      {%- if product.featured_image != blank -%}
+                      {%- if card_image != blank -%}
                         {{
-                          product.featured_image
+                          card_image
                           | image_url: width: 960
                           | image_tag: loading: 'lazy', class: 'menu-items-overlay__product-image', alt: product.title
                         }}
                       {%- endif -%}
                     </a>
                     <div class="menu-items-overlay__product-meta">
+
+                    {% comment %} Product tags {% endcomment %}
+                        {%- assign product_tag_callouts = product.metafields.custom.product_tag_callouts.value -%}
+                        <div class="card__tag-callouts">
+                        
+                            {% if product_tag_callouts != blank %}
+                            {% for tag_callout in product_tag_callouts %}
+                            <span class="product-card__tag">{{ tag_callout }}</span>
+                            {% endfor %}
+                            {% endif %}
+                        
+                            {%- assign available_count = product.selected_or_first_available_variant.inventory_quantity | default: 0 -%}
+                            <span class="product-card__tag stock-amount">
+                                {% if available_count > 0 %}
+                                {{ available_count }} available
+                                {% else %}
+                                Sold out
+                                {% endif %}
+                            </span>
+                        
+                        </div>
+                    {% comment %} End Product tags {% endcomment %}
+                    
+                    <div class="title__price-wrap">
                       <a class="menu-items-overlay__product-title fh3" href="{{ product.url }}">
                         {{- product.title | escape -}}
                       </a>
                       <p class="menu-items-overlay__price">{{ product.price | money }}</p>
+                    </div>
+                      
                       {%- if selected_variant != blank -%}
                         {%- form 'product', product, class: 'menu-items-overlay__form' -%}
                           <input type="hidden" name="id" value="{{ selected_variant.id }}">
@@ -65,127 +95,128 @@
 
 {% javascript %}
   (() => {
-    const root = document.querySelector('[data-menu-overlay-root]');
-    if (!root || root.dataset.overlayInit === 'true') return;
-    root.dataset.overlayInit = 'true';
+    const overlay = document.querySelector('.section__menu-items-overlay');
+    if (!overlay) return;
 
-    const nav = root.closest('.phil-primary-nav-plain');
+    const nav = document.querySelector('.phil-primary-nav-plain');
     if (!nav) return;
 
-    const triggers = nav.querySelectorAll('[data-menu-overlay-trigger]');
-    const closeButton = root.querySelector('[data-menu-overlay-close]');
-    const backdrop = root.querySelector('.menu-items-overlay__backdrop');
-    const panels = root.querySelectorAll('[data-menu-overlay-panel]');
+    const triggers = nav.querySelectorAll('.phil-nav__link--overlay-trigger');
+    const panels = overlay.querySelectorAll('.menu-items-overlay__panel');
+    const backdrop = overlay.querySelector('.menu-items-overlay__backdrop');
 
-    let activePanel = null;
-    let overlayTimeline = null;
+    if (!triggers.length || !panels.length || !backdrop) return;
 
-    const hideOverlay = () => {
-      root.hidden = true;
-      root.setAttribute('aria-hidden', 'true');
+    let activePanelIndex = -1;
+    let timeline = null;
+
+    function cleanupInlineStyles() {
+      backdrop.style.removeProperty('opacity');
       panels.forEach((panel) => {
-        panel.hidden = true;
-      });
-
-      if (overlayTimeline) {
-        overlayTimeline.kill();
-        overlayTimeline = null;
-      }
-
-      if (backdrop) backdrop.style.removeProperty('opacity');
-      if (activePanel) {
-        activePanel.querySelectorAll('.menu-items-overlay__product-card').forEach((card) => {
+        const cards = panel.querySelectorAll('.menu-items-overlay__product-card');
+        cards.forEach((card) => {
           card.style.removeProperty('opacity');
           card.style.removeProperty('transform');
         });
-      }
-      activePanel = null;
-    };
-
-    const showPanel = (panelIndex) => {
-      let foundPanel = null;
-
-      panels.forEach((panel) => {
-        if (panel.dataset.menuOverlayPanel === panelIndex) {
-          panel.hidden = false;
-          foundPanel = panel;
-        } else {
-          panel.hidden = true;
-        }
       });
+    }
 
-      activePanel = foundPanel;
-      return activePanel;
-    };
+    function hideAllPanels() {
+      panels.forEach((panel) => {
+        panel.hidden = true;
+      });
+    }
 
-    const playOpenAnimation = () => {
-      if (!activePanel) return;
+    function hideOverlay() {
+      overlay.hidden = true;
+      overlay.setAttribute('aria-hidden', 'true');
+      hideAllPanels();
+      cleanupInlineStyles();
+      activePanelIndex = -1;
+      if (timeline) {
+        timeline.kill();
+        timeline = null;
+      }
+    }
 
-      const cards = activePanel.querySelectorAll('.menu-items-overlay__product-card');
+    function buildTimeline(panelIndex) {
+      if (typeof gsap === 'undefined') return null;
+      const panel = panels[panelIndex];
+      if (!panel) return null;
 
-      if (overlayTimeline) overlayTimeline.kill();
-
-      overlayTimeline = gsap.timeline({
-        paused: true,
+      const cards = panel.querySelectorAll('.menu-items-overlay__product-card');
+      const tl = gsap.timeline({
         defaults: { ease: 'power2.out' },
         onReverseComplete: hideOverlay
       });
 
-      if (backdrop) {
-        overlayTimeline.set(backdrop, { opacity: 0 });
-        overlayTimeline.to(backdrop, { opacity: 1, duration: 0.25 });
-      }
-
-      overlayTimeline.fromTo(
+      tl.set(backdrop, { opacity: 0 });
+      tl.to(backdrop, { opacity: 1, duration: 0.25 });
+      tl.fromTo(
         cards,
         { opacity: 0, y: 24 },
         { opacity: 1, y: 0, duration: 0.45, stagger: 0.3 },
-        backdrop ? '-=0.05' : 0
+        '-=0.05'
       );
+      return tl;
+    }
 
-      overlayTimeline.play(0);
-    };
+    function showPanelByIndex(panelIndex) {
+      hideAllPanels();
+      const panel = panels[panelIndex];
+      if (!panel) return false;
+      panel.hidden = false;
+      activePanelIndex = panelIndex;
+      return true;
+    }
 
-    const openOverlay = (panelIndex) => {
-      if (!showPanel(panelIndex)) return;
+    function openMenu(panelIndex) {
+      if (!showPanelByIndex(panelIndex)) return;
 
-      root.hidden = false;
-      root.setAttribute('aria-hidden', 'false');
+      overlay.hidden = false;
+      overlay.setAttribute('aria-hidden', 'false');
 
-      if (typeof gsap === 'undefined') return;
-      playOpenAnimation();
-    };
+      if (timeline) {
+        timeline.kill();
+        timeline = null;
+      }
 
-    const closeOverlay = () => {
-      if (root.hidden) return;
+      cleanupInlineStyles();
 
-      if (typeof gsap === 'undefined' || !overlayTimeline) {
-        hideOverlay();
+      timeline = buildTimeline(panelIndex);
+      if (!timeline) {
+        backdrop.style.opacity = '1';
         return;
       }
 
-      overlayTimeline.reverse();
-    };
+      timeline.play(0);
+    }
 
-    triggers.forEach((trigger) => {
+    function closeMenu() {
+      if (overlay.hidden) return;
+      if (!timeline) {
+        hideOverlay();
+        return;
+      }
+      timeline.reverse();
+    }
+
+    triggers.forEach((trigger, index) => {
       trigger.addEventListener('click', (event) => {
-        const panelIndex = trigger.dataset.menuOverlayParentIndex;
-        if (!panelIndex) return;
-
-        const hasPanel = Array.from(panels).some((panel) => panel.dataset.menuOverlayPanel === panelIndex);
-        if (!hasPanel) return;
+        if (!panels[index]) return;
 
         event.preventDefault();
-        openOverlay(panelIndex);
+        if (!overlay.hidden && activePanelIndex === index) {
+          return;
+        }
+        openMenu(index);
       });
     });
 
-    if (closeButton) {
-      closeButton.addEventListener('click', closeOverlay);
-    }
+    backdrop.addEventListener('click', closeMenu);
 
     document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') closeOverlay();
+      if (event.key === 'Escape') closeMenu();
     });
   })();
 {% endjavascript %}
