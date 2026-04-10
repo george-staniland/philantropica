@@ -1,0 +1,160 @@
+{% doc %}
+  Renders a full-screen overlay for child product links from a menu.
+  @param {linklist} menu - Primary menu object with top-level items and child links
+{% enddoc %}
+
+{%- if menu != blank -%}
+  <div class="section__menu-items-overlay menu-items-overlay" data-menu-overlay-root hidden aria-hidden="true">
+    <button
+      class="menu-items-overlay__backdrop"
+      type="button"
+      aria-label="{{ 'accessibility.close' | t }}"
+      data-menu-overlay-close
+    ></button>
+    <div class="menu-items-overlay__content" role="dialog" aria-modal="true" aria-label="Menu products">
+      {%- for parent_link in menu.links -%}
+        {%- assign has_product_children = false -%}
+        {%- for child_link in parent_link.links -%}
+          {%- if child_link.type == 'product_link' and child_link.object != blank -%}
+            {%- assign has_product_children = true -%}
+            {%- break -%}
+          {%- endif -%}
+        {%- endfor -%}
+
+        {%- if has_product_children -%}
+          <div class="menu-items-overlay__panel" data-menu-overlay-panel="{{ forloop.index0 }}" hidden>
+            <div class="menu-items-overlay__grid">
+              {%- for child_link in parent_link.links -%}
+                {%- if child_link.type == 'product_link' and child_link.object != blank -%}
+                  {%- assign product = child_link.object -%}
+                  {%- assign selected_variant = product.selected_or_first_available_variant -%}
+                  <article class="menu-items-overlay__product-card">
+                    <a class="menu-items-overlay__product-image-link" href="{{ product.url }}">
+                      {%- if product.featured_image != blank -%}
+                        {{
+                          product.featured_image
+                          | image_url: width: 960
+                          | image_tag: loading: 'lazy', class: 'menu-items-overlay__product-image', alt: product.title
+                        }}
+                      {%- endif -%}
+                    </a>
+                    <div class="menu-items-overlay__product-meta">
+                      <a class="menu-items-overlay__product-title fh3" href="{{ product.url }}">
+                        {{- product.title | escape -}}
+                      </a>
+                      <p class="menu-items-overlay__price">{{ product.price | money }}</p>
+                      {%- if selected_variant != blank -%}
+                        {%- form 'product', product, class: 'menu-items-overlay__form' -%}
+                          <input type="hidden" name="id" value="{{ selected_variant.id }}">
+                          <button type="submit" name="add" class="menu-items-overlay__buy-button button button--primary">
+                            {{ 'products.product.add_to_cart' | t }}
+                          </button>
+                        {%- endform -%}
+                      {%- endif -%}
+                    </div>
+                  </article>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+{%- endif -%}
+
+{% javascript %}
+  (() => {
+    const roots = document.querySelectorAll('[data-menu-overlay-root]');
+    if (!roots.length) return;
+
+    roots.forEach((root) => {
+      if (root.dataset.overlayInit === 'true') return;
+      root.dataset.overlayInit = 'true';
+
+      const nav = root.closest('.phil-primary-nav-plain');
+      if (!nav) return;
+
+      const triggers = nav.querySelectorAll('[data-menu-overlay-trigger]');
+      const closeButtons = root.querySelectorAll('[data-menu-overlay-close]');
+      const panels = root.querySelectorAll('[data-menu-overlay-panel]');
+
+      const showPanel = (panelIndex) => {
+        let foundPanel = false;
+
+        panels.forEach((panel) => {
+          if (panel.dataset.menuOverlayPanel === panelIndex) {
+            panel.hidden = false;
+            foundPanel = true;
+          } else {
+            panel.hidden = true;
+          }
+        });
+
+        return foundPanel;
+      };
+
+      const openOverlay = (panelIndex) => {
+        if (!showPanel(panelIndex)) return;
+
+        root.hidden = false;
+        root.setAttribute('aria-hidden', 'false');
+
+        if (typeof gsap !== 'undefined') {
+          gsap.killTweensOf(root);
+          gsap.set(root, { display: 'block' });
+          gsap.fromTo(root, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.25, ease: 'power1.out' });
+        }
+      };
+
+      const closeOverlay = () => {
+        console.log('close function')
+        if (root.hidden) return;
+
+        const completeClose = () => {
+          root.hidden = true;
+          root.setAttribute('aria-hidden', 'true');
+          panels.forEach((panel) => {
+            panel.hidden = true;
+          });
+          root.style.removeProperty('opacity');
+          root.style.removeProperty('visibility');
+          root.style.removeProperty('display');
+        };
+
+        if (typeof gsap !== 'undefined') {
+          gsap.killTweensOf(root);
+          gsap.to(root, {
+            autoAlpha: 0,
+            duration: 0.2,
+            ease: 'power1.in',
+            onComplete: completeClose
+          });
+        } else {
+          completeClose();
+        }
+      };
+
+      triggers.forEach((trigger) => {
+        trigger.addEventListener('click', (event) => {
+          const panelIndex = trigger.dataset.menuOverlayParentIndex;
+          if (!panelIndex) return;
+
+          const hasPanel = Array.from(panels).some((panel) => panel.dataset.menuOverlayPanel === panelIndex);
+          if (!hasPanel) return;
+
+          event.preventDefault();
+          openOverlay(panelIndex);
+        });
+      });
+
+      closeButtons.forEach((button) => {
+        button.addEventListener('click', closeOverlay);
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') closeOverlay();
+      });
+    });
+  })();
+{% endjavascript %}
