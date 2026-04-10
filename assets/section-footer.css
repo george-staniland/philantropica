@@ -17,9 +17,13 @@
 @media(max-width: 448px) {
 
 .footer__inner {
-  padding: 28px;
+  padding: 16px 12px 14px;
+  border-radius: 12px;
  }
   .footer__main-text {
     font-size: 17px;
+  }
+  .footer p {
+    line-height: 0.9;
   }
 }

@@ -1,0 +1,35 @@
+---
+description: Enforce desktop-first CSS with mobile breakpoints at file end
+alwaysApply: true
+---
+
+# Mobile CSS breakpoint order
+
+For this Shopify theme, write desktop/base styles first, then add mobile overrides at the end of the CSS file.
+
+- Put mobile media queries at the end of the file, not scattered throughout.
+- Use this order:
+  1. `@media (max-width: 996px)` for tablet and down.
+  2. `@media (max-width: 480px)` for small mobile and down.
+- Keep the `480px` block after the `996px` block so narrower overrides can refine broader mobile rules.
+
+```css
+.component {
+  /* Desktop/base styles first */
+  padding: 2rem;
+  font-size: 1rem;
+}
+
+@media (max-width: 996px) {
+  .component {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .component {
+    padding: 1rem;
+    font-size: 0.9375rem;
+  }
+}
+```

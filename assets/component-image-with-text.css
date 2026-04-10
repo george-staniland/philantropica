@@ -458,3 +458,31 @@
 .image-with-text .image-with-text__media-item img:not(.image-with-text__badge-image){
   border-radius: 20px;
 }
+
+@media (max-width: 996px) {
+  .image-with-text {
+    padding: 0 var(--pm);
+  }
+  .media > img.image-with-text__badge-image {
+    right: 24px;
+    bottom: -52px;
+    width: 120px;
+  }
+
+  .image-with-text__content {
+    row-gap: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .media > img.image-with-text__badge-image {
+    right: 12px;
+    bottom: -36px;
+    width: 92px;
+  }
+
+  .image-with-text__content {
+    padding: 3rem 2rem 3.5rem;
+    row-gap: 18px;
+  }
+}

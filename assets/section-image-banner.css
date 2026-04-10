@@ -516,3 +516,15 @@
 .media > img {
   object-position: top;
 }
+
+@media (max-width: 996px) {
+  .banner  .banner__content {
+    display: flex;
+    align-items: flex-end;
+  }
+  .banner  .banner__content .banner__box {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+  }
+}
