@@ -65,96 +65,127 @@
 
 {% javascript %}
   (() => {
-    const roots = document.querySelectorAll('[data-menu-overlay-root]');
-    if (!roots.length) return;
+    const root = document.querySelector('[data-menu-overlay-root]');
+    if (!root || root.dataset.overlayInit === 'true') return;
+    root.dataset.overlayInit = 'true';
 
-    roots.forEach((root) => {
-      if (root.dataset.overlayInit === 'true') return;
-      root.dataset.overlayInit = 'true';
+    const nav = root.closest('.phil-primary-nav-plain');
+    if (!nav) return;
 
-      const nav = root.closest('.phil-primary-nav-plain');
-      if (!nav) return;
+    const triggers = nav.querySelectorAll('[data-menu-overlay-trigger]');
+    const closeButton = root.querySelector('[data-menu-overlay-close]');
+    const backdrop = root.querySelector('.menu-items-overlay__backdrop');
+    const panels = root.querySelectorAll('[data-menu-overlay-panel]');
 
-      const triggers = nav.querySelectorAll('[data-menu-overlay-trigger]');
-      const closeButtons = root.querySelectorAll('[data-menu-overlay-close]');
-      const panels = root.querySelectorAll('[data-menu-overlay-panel]');
+    let activePanel = null;
+    let overlayTimeline = null;
 
-      const showPanel = (panelIndex) => {
-        let foundPanel = false;
+    const hideOverlay = () => {
+      root.hidden = true;
+      root.setAttribute('aria-hidden', 'true');
+      panels.forEach((panel) => {
+        panel.hidden = true;
+      });
 
-        panels.forEach((panel) => {
-          if (panel.dataset.menuOverlayPanel === panelIndex) {
-            panel.hidden = false;
-            foundPanel = true;
-          } else {
-            panel.hidden = true;
-          }
+      if (overlayTimeline) {
+        overlayTimeline.kill();
+        overlayTimeline = null;
+      }
+
+      if (backdrop) backdrop.style.removeProperty('opacity');
+      if (activePanel) {
+        activePanel.querySelectorAll('.menu-items-overlay__product-card').forEach((card) => {
+          card.style.removeProperty('opacity');
+          card.style.removeProperty('transform');
         });
+      }
+      activePanel = null;
+    };
 
-        return foundPanel;
-      };
+    const showPanel = (panelIndex) => {
+      let foundPanel = null;
 
-      const openOverlay = (panelIndex) => {
-        if (!showPanel(panelIndex)) return;
-
-        root.hidden = false;
-        root.setAttribute('aria-hidden', 'false');
-
-        if (typeof gsap !== 'undefined') {
-          gsap.killTweensOf(root);
-          gsap.set(root, { display: 'block' });
-          gsap.fromTo(root, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.25, ease: 'power1.out' });
-        }
-      };
-
-      const closeOverlay = () => {
-        console.log('close function')
-        if (root.hidden) return;
-
-        const completeClose = () => {
-          root.hidden = true;
-          root.setAttribute('aria-hidden', 'true');
-          panels.forEach((panel) => {
-            panel.hidden = true;
-          });
-          root.style.removeProperty('opacity');
-          root.style.removeProperty('visibility');
-          root.style.removeProperty('display');
-        };
-
-        if (typeof gsap !== 'undefined') {
-          gsap.killTweensOf(root);
-          gsap.to(root, {
-            autoAlpha: 0,
-            duration: 0.2,
-            ease: 'power1.in',
-            onComplete: completeClose
-          });
+      panels.forEach((panel) => {
+        if (panel.dataset.menuOverlayPanel === panelIndex) {
+          panel.hidden = false;
+          foundPanel = panel;
         } else {
-          completeClose();
+          panel.hidden = true;
         }
-      };
-
-      triggers.forEach((trigger) => {
-        trigger.addEventListener('click', (event) => {
-          const panelIndex = trigger.dataset.menuOverlayParentIndex;
-          if (!panelIndex) return;
-
-          const hasPanel = Array.from(panels).some((panel) => panel.dataset.menuOverlayPanel === panelIndex);
-          if (!hasPanel) return;
-
-          event.preventDefault();
-          openOverlay(panelIndex);
-        });
       });
 
-      closeButtons.forEach((button) => {
-        button.addEventListener('click', closeOverlay);
+      activePanel = foundPanel;
+      return activePanel;
+    };
+
+    const playOpenAnimation = () => {
+      if (!activePanel) return;
+
+      const cards = activePanel.querySelectorAll('.menu-items-overlay__product-card');
+
+      if (overlayTimeline) overlayTimeline.kill();
+
+      overlayTimeline = gsap.timeline({
+        paused: true,
+        defaults: { ease: 'power2.out' },
+        onReverseComplete: hideOverlay
       });
 
-      document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') closeOverlay();
+      if (backdrop) {
+        overlayTimeline.set(backdrop, { opacity: 0 });
+        overlayTimeline.to(backdrop, { opacity: 1, duration: 0.25 });
+      }
+
+      overlayTimeline.fromTo(
+        cards,
+        { opacity: 0, y: 24 },
+        { opacity: 1, y: 0, duration: 0.45, stagger: 0.3 },
+        backdrop ? '-=0.05' : 0
+      );
+
+      overlayTimeline.play(0);
+    };
+
+    const openOverlay = (panelIndex) => {
+      if (!showPanel(panelIndex)) return;
+
+      root.hidden = false;
+      root.setAttribute('aria-hidden', 'false');
+
+      if (typeof gsap === 'undefined') return;
+      playOpenAnimation();
+    };
+
+    const closeOverlay = () => {
+      if (root.hidden) return;
+
+      if (typeof gsap === 'undefined' || !overlayTimeline) {
+        hideOverlay();
+        return;
+      }
+
+      overlayTimeline.reverse();
+    };
+
+    triggers.forEach((trigger) => {
+      trigger.addEventListener('click', (event) => {
+        const panelIndex = trigger.dataset.menuOverlayParentIndex;
+        if (!panelIndex) return;
+
+        const hasPanel = Array.from(panels).some((panel) => panel.dataset.menuOverlayPanel === panelIndex);
+        if (!hasPanel) return;
+
+        event.preventDefault();
+        openOverlay(panelIndex);
       });
+    });
+
+    if (closeButton) {
+      closeButton.addEventListener('click', closeOverlay);
+    }
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeOverlay();
     });
   })();
 {% endjavascript %}

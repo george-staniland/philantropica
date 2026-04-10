@@ -12,7 +12,7 @@
   border: 0;
   background: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(1.3px);
-  cursor: not-allowed;
+  cursor: pointer;
 }
 
 .section__menu-items-overlay .menu-items-overlay__content {
@@ -21,12 +21,12 @@
   width: 100%;
   height: 100%;
   overflow-y: auto;
+  pointer-events: none;
+  padding: 103px var(--pm) 0px;
 }
 
 .section__menu-items-overlay .menu-items-overlay__panel {
-  min-height: 100%;
-  padding-top: 110px;
-  padding-bottom: var(--pm);
+  pointer-events: auto;
 }
 
 .section__menu-items-overlay .menu-items-overlay__header {
