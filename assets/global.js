@@ -126,6 +126,27 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 });
 
+document.addEventListener('DOMContentLoaded', fadeInBannerAndHeader)
+
+function fadeInBannerAndHeader () {
+  gsap.set('.phil-primary-nav-plain , .header__menu_right', {
+    opacity: 0,
+    y: -100,
+  });
+  gsap.set('.section__image-banner .banner__box', {
+    opacity: 0,
+    y: 100
+  });
+
+  gsap.to('.phil-primary-nav-plain , .header__menu_right, .section__image-banner .banner__box', {
+    opacity: 1,
+    y: 0,
+    delay: 1,
+    duration: .86,
+    ease: "elastic.out(1,0.65)",
+  });
+
+}
 
 class SectionId {
   static #separator = '__';

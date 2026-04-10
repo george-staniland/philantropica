@@ -47,8 +47,7 @@
       "settings": {
         "image": "shopify://shop_images/banner-1.jpg",
         "image_overlay_color": "#000000",
-        "image_height": "screen-height",
-        "image_behavior": "none"
+        "image_height": "screen-height"
       }
     },
     "image_with_text_QYHMxn": {
@@ -97,8 +96,8 @@
         "section_color_scheme": "scheme-b7a19602-1e50-4373-8ea1-c1ad0fcf758f",
         "color_scheme": "scheme-b7a19602-1e50-4373-8ea1-c1ad0fcf758f",
         "overlay_previous_section": false,
-        "padding_top": 240,
-        "padding_bottom": 200
+        "padding_top": 180,
+        "padding_bottom": 180
       }
     },
     "rich_text_kt8EF6": {
@@ -228,7 +227,7 @@
         "show_vendor": false,
         "show_rating": false,
         "quick_add": "none",
-        "columns_mobile": "2",
+        "columns_mobile": "1",
         "swipe_on_mobile": false,
         "padding_top": 36,
         "padding_bottom": 36
