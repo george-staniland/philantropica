@@ -6,9 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (overlayImage1) {
     gsap.to(overlayImage1, {
-      y: -12,
-      x: 9,
-      duration: 3,
+      y: -10,
+      x: 55,
+      rotate: 8,
+      duration: 3.4,
       ease: 'sine.inOut',
       yoyo: true,
       repeat: -1,
@@ -17,10 +18,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (overlayImage2) {
     gsap.to(overlayImage2, {
-      y: 40,
-      x: -3,
+      y: 115,
+      x: -10,
       rotate: -20,
-      duration: 3.2,
+      duration: 4.9,
       ease: 'sine.inOut',
       yoyo: true,
       repeat: -1,
