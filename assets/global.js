@@ -141,10 +141,16 @@ function fadeInBannerAndHeader () {
   gsap.to('.phil-primary-nav-plain , .header__menu_right, .section__image-banner .banner__box', {
     opacity: 1,
     y: 0,
-    delay: 1,
+    delay: 0.2,
     duration: .86,
     ease: "elastic.out(1,0.65)",
   });
+
+  gsap.to(':root',{
+    "--img-banner-overlay-opacity": 1,
+    duration: .8,
+    ease: 'sine.in'
+  })
 
 }
 

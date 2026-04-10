@@ -25,14 +25,21 @@
 
 {%- style -%}
   #Banner-{{ section.id }}::after {
-    /* Overlay gradient uses fixed alpha ramp: 3% -> 80% */
     background: linear-gradient(
-      to bottom,
-      {{ section.settings.image_overlay_color | color_modify: 'alpha', 0.02 }} 0%,
-      {{ section.settings.image_overlay_color | color_modify: 'alpha', 0.03 }} 10%,
-      {{ section.settings.image_overlay_color | color_modify: 'alpha', 0.5 }} 94%
-    );
-    opacity: 1;
+  to bottom,
+  rgba(0, 0, 0, 0) 20%,
+  rgba(0, 0, 0, 0.08) 40%,
+  rgba(0, 0, 0, 0.18) 60%,
+  rgba(0, 0, 0, 0.32) 80%,
+  rgba(0, 0, 0, 0.5) 100%
+);
+    opacity: var(--img-banner-overlay-opacity);
+    content: '';
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
   }
 {%- endstyle -%}
 

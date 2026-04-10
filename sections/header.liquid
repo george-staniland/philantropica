@@ -51,7 +51,7 @@
   <header class="header header-primary template-{{ template.name | handleize }} page-{{ request.page_type | handleize }} template-suffix-{{ template.suffix | handleize }}">
     {%- assign phil_primary_menu = section.settings.menu -%}
     {%- assign right_menu = linklists[section.settings.menu_right] -%}
-
+    {% render 'menu-items-overlay', menu: phil_primary_menu %}
     <div class="header-mobile-menu-wrap" role="navigation" aria-label="Mobile menu">
       {%- if phil_primary_menu != blank -%}
         {%- for link in phil_primary_menu.links -%}
@@ -109,7 +109,6 @@
             {{ link.title | escape }}
           </a>
         {%- endfor -%}
-        {% render 'menu-items-overlay', menu: phil_primary_menu %}
       </section>
     {%- endif -%}
 
