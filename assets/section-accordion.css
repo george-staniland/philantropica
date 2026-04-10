@@ -15,6 +15,7 @@
   background-color: transparent;
   border: 1px solid var(--sand);
   border-radius: 20px;
+  overflow: hidden;
 }
 
 .section__accordion .accordion-row:last-child {
@@ -32,10 +33,26 @@
   padding: 24px;
   text-align: left;
   width: 100%;
+  transition: all .3s ease-in-out;
 }
 
-.section__accordion .accordion-title {
+.section__accordion .accordion-trigger:hover {
+  background-color: var(--sand);
+  .accordion-title , .icon {
+    color: var(--blue);
+  }
+}
+
+.section__accordion .accordion-row.is-open {
+  background-color: var(--sand);
+  .accordion-title , .icon,.accordion-content-inner  {
+    color: var(--blue);
+  }
+}
+
+.section__accordion .accordion-title, .section__accordion .icon {
   color: var(--sand);
+  transition: all .3s ease-in-out;
 }
 
 .section__accordion .accordion-icons {
@@ -65,5 +82,5 @@
 }
 
 .section__accordion .accordion-content-inner {
-  padding: 24px;
+  padding: 17px 24px 36px;
 }

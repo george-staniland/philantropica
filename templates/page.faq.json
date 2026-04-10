@@ -48,19 +48,33 @@
         "accordion_row_f3cDdP": {
           "type": "accordion_row",
           "settings": {
-            "title": "Row 2",
+            "title": "Why is it so expensive?",
+            "paragraph": "<p>Phasellus fermentum malesuada phasellus netus dictum aenean placerat egestas amet. Ornare taciti semper dolor tristique morbi. Sem leo tincidunt aliquet semper eu lectus scelerisque quis. Sagittis vivamus mollis nisi mollis enim fermentum laoreet.</p>"
+          }
+        },
+        "accordion_row_UgmiUD": {
+          "type": "accordion_row",
+          "settings": {
+            "title": "Is it tax deductible?",
+            "paragraph": "<p>Phasellus fermentum malesuada phasellus netus dictum aenean placerat egestas amet. Ornare taciti semper dolor tristique morbi. Sem leo tincidunt aliquet semper eu lectus scelerisque quis. Sagittis vivamus mollis nisi mollis enim fermentum laoreet.</p>"
+          }
+        },
+        "accordion_row_gpMya8": {
+          "type": "accordion_row",
+          "settings": {
+            "title": "What flavour it is?",
             "paragraph": "<p>Phasellus fermentum malesuada phasellus netus dictum aenean placerat egestas amet. Ornare taciti semper dolor tristique morbi. Sem leo tincidunt aliquet semper eu lectus scelerisque quis. Sagittis vivamus mollis nisi mollis enim fermentum laoreet.</p>"
           }
         }
       },
       "block_order": [
         "accordion_row_ggEeRN",
-        "accordion_row_f3cDdP"
+        "accordion_row_f3cDdP",
+        "accordion_row_UgmiUD",
+        "accordion_row_gpMya8"
       ],
       "name": "Accordion",
-      "settings": {
-        "color_scheme": "scheme-b7a19602-1e50-4373-8ea1-c1ad0fcf758f"
-      }
+      "settings": {}
     }
   },
   "order": [

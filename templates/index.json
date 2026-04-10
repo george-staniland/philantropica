@@ -98,7 +98,7 @@
         "color_scheme": "scheme-b7a19602-1e50-4373-8ea1-c1ad0fcf758f",
         "overlay_previous_section": false,
         "padding_top": 240,
-        "padding_bottom": 240
+        "padding_bottom": 200
       }
     },
     "rich_text_kt8EF6": {
@@ -122,6 +122,7 @@
         "heading_WDX3Lx",
         "text_cXwmXA"
       ],
+      "disabled": true,
       "name": "t:sections.rich-text.presets.name",
       "settings": {
         "desktop_content_position": "center",
@@ -136,10 +137,11 @@
     },
     "featured_collection_kVcTMw": {
       "type": "featured-collection",
+      "disabled": true,
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
         "collection": "featured",
-        "show_large_product_cards": true,
+        "show_large_product_cards": false,
         "products_to_show": 6,
         "title": "",
         "heading_size": "h1",
@@ -170,7 +172,7 @@
         "heading_6DQdKt": {
           "type": "heading",
           "settings": {
-            "heading": "<p>Philantropica Merch & Bundle store</p>",
+            "heading": "<p>Philantropica Dept. of Merch & bundles</p>",
             "heading_size": "fh2"
           }
         },
@@ -198,7 +200,7 @@
         "color_scheme": "scheme-b7a19602-1e50-4373-8ea1-c1ad0fcf758f",
         "full_width": false,
         "reveal_on_scroll": true,
-        "padding_top": 140,
+        "padding_top": 12,
         "padding_bottom": 0
       }
     },
@@ -245,7 +247,7 @@
       "type": "founding-members",
       "name": "Founding Members",
       "settings": {
-        "heading": "Our founding members",
+        "heading": "Philantropica Drinkers",
         "background_image": "shopify://shop_images/b1-sml.jpg",
         "corner_image_1": "shopify://shop_images/p1.png",
         "corner_image_2": "shopify://shop_images/p3.png",
@@ -259,7 +261,7 @@
         "heading_wMgKK6": {
           "type": "heading",
           "settings": {
-            "heading": "<p>For the quietly generous/If generosity finds you</p>",
+            "heading": "<p>For the quietly generous:<br/>If generosity finds you</p>",
             "heading_size": "fh2"
           }
         },
@@ -349,7 +351,7 @@
       "name": "Vertical Carousel",
       "settings": {
         "color_scheme": "scheme-b7a19602-1e50-4373-8ea1-c1ad0fcf758f",
-        "title": "The Philantropica universe",
+        "title": "Dive into the Philantropica universe",
         "button_label": "Explore now",
         "button_link": "shopify://collections/all",
         "button_style_secondary": false
