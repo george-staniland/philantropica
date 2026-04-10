@@ -14,3 +14,12 @@
   font-size: 20px;
 }
 
+@media(max-width: 448px) {
+
+.footer__inner {
+  padding: 28px;
+ }
+  .footer__main-text {
+    font-size: 17px;
+  }
+}
