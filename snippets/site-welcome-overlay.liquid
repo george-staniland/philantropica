@@ -1,0 +1,29 @@
+{{ 'component-site-welcome-overlay.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'site-welcome-overlay.js' | asset_url }}" defer="defer"></script>
+
+<section
+  id="SiteWelcomeOverlay"
+  class="section__site-welcome-overlay is-hidden"
+  aria-hidden="true"
+>
+  <div class="site-welcome-overlay__backdrop" data-site-welcome-overlay-backdrop></div>
+  <div class="site-welcome-overlay__content" role="dialog" aria-modal="true" aria-labelledby="SiteWelcomeOverlayTitle">
+
+    <h2 id="SiteWelcomeOverlayTitle" class="site-welcome-overlay__title fh3">
+      {{ title | default: 'Welcome to our store' | escape }}
+    </h2>
+
+    <div class="site-welcome-overlay__paragraph fb">
+      {{ paragraph }}
+    </div>
+
+    <button
+      type="button"
+      class="site-welcome-overlay__button button button--primary"
+      data-site-welcome-overlay-close
+    >
+      {{ button_text | default: 'Enter site' | escape }}
+    </button>
+
+  </div>
+</section>

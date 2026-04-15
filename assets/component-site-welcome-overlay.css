@@ -1,0 +1,72 @@
+.section__site-welcome-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--blue);
+  transition: opacity .6s ease-in-out;
+}
+
+.section__site-welcome-overlay.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.section__site-welcome-overlay .site-welcome-overlay__backdrop {
+  display: block;
+  position: absolute;
+  inset: 0;
+  background: #000b435f;
+  cursor: pointer;
+}
+
+.section__site-welcome-overlay .site-welcome-overlay__content {
+  position: relative;
+  z-index: 1;
+  width: clamp(730px, 54vw, 1000px);
+  padding: 50px 55px;
+  border-radius: 20px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 45px;
+  border: 2px solid var(--blue);
+}
+
+.section__site-welcome-overlay .site-welcome-overlay__title {
+  margin: 0;
+  color: var(--blue);
+  max-width: 600px;
+}
+
+.section__site-welcome-overlay .site-welcome-overlay__paragraph {
+  margin: 0;
+}
+
+.section__site-welcome-overlay .site-welcome-overlay__paragraph p {
+  margin: 0;
+}
+
+.section__site-welcome-overlay .site-welcome-overlay__paragraph p + p {
+  margin-top: 1em;
+}
+
+@media (max-width: 996px) {
+  .section__site-welcome-overlay .site-welcome-overlay__content {
+    width: 75vw;
+    br {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .section__site-welcome-overlay .site-welcome-overlay__content {
+    width: 92vw;
+    padding: 50px 35px;
+    gap: 25px;
+  }
+}

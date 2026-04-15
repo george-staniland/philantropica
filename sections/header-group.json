@@ -14,21 +14,11 @@
     "header": {
       "type": "header",
       "settings": {
-        "logo_position": "middle-center",
-        "mobile_logo_position": "center",
         "menu": "main-menu",
         "menu_right": "main-menu-right",
-        "menu_type_desktop": "mega",
-        "sticky_header_type": "always",
-        "show_line_separator": false,
-        "color_scheme": "scheme-d0e58f9c-4f02-48d6-b02b-c1231231ade6",
-        "menu_color_scheme": "scheme-b7a19602-1e50-4373-8ea1-c1ad0fcf758f",
-        "enable_country_selector": true,
-        "enable_language_selector": true,
-        "enable_customer_avatar": true,
-        "margin_bottom": 0,
-        "padding_top": 30,
-        "padding_bottom": 20
+        "welcome_overlay_title": "Welcome to the Philantropica universe",
+        "welcome_overlay_paragraph": "<p>Philantropica is not just a drink. It’s a declaration. <br/>Of taste. Of status. Of effortless benevolence. </p><p>And let’s be clear - this isn’t luxury. This is post-luxury. <br/>A drink so rare it make Hermés look like fast fashion, and Dom Pérignon taste like office water.</p><p>Philantropica is, quite literally, the most expensive and exclusive soft drink brand ever made. It’s for people who don’t just want to show they care - but want to do so in a way most people never could.</p>",
+        "welcome_overlay_button_text": "Enter site"
       }
     }
   },

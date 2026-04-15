@@ -128,7 +128,61 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', fadeInBannerAndHeader)
 
+var SITE_WELCOME_OVERLAY_DISMISSED_KEY = 'siteWelcomeOverlayDismissed';
+
 function fadeInBannerAndHeader () {
+  var hasAnimated = false;
+
+  function hasWelcomeOverlayBeenDismissed() {
+    try {
+      return window.localStorage.getItem(SITE_WELCOME_OVERLAY_DISMISSED_KEY) === 'true';
+    } catch (error) {
+      // If storage is unavailable, don't block header/banner animation.
+      return true;
+    }
+  }
+
+  function runFadeInAnimation() {
+    if (hasAnimated) {
+      return;
+    }
+
+    hasAnimated = true;
+
+    window.removeEventListener('storage', onDismissedStorageChange);
+    window.removeEventListener('siteWelcomeOverlayDismissedChange', onDismissedCustomChange);
+
+    gsap.to('.phil-primary-nav-plain , .header__menu_right, .section__image-banner .banner__box', {
+      opacity: 1,
+      y: 0,
+      delay: 0.2,
+      duration: .86,
+      ease: "elastic.out(1,0.65)",
+    });
+
+    gsap.to(':root',{
+      "--img-banner-overlay-opacity": 1,
+      duration: .8,
+      ease: 'sine.in'
+    })
+  }
+
+  function onDismissedStorageChange(event) {
+    if (event.key !== SITE_WELCOME_OVERLAY_DISMISSED_KEY) {
+      return;
+    }
+
+    if (event.newValue === 'true') {
+      runFadeInAnimation();
+    }
+  }
+
+  function onDismissedCustomChange(event) {
+    if (event.detail && event.detail.dismissed === true) {
+      runFadeInAnimation();
+    }
+  }
+
   gsap.set('.phil-primary-nav-plain , .header__menu_right', {
     opacity: 0,
     y: -100,
@@ -138,20 +192,13 @@ function fadeInBannerAndHeader () {
     y: 100
   });
 
-  gsap.to('.phil-primary-nav-plain , .header__menu_right, .section__image-banner .banner__box', {
-    opacity: 1,
-    y: 0,
-    delay: 0.2,
-    duration: .86,
-    ease: "elastic.out(1,0.65)",
-  });
+  if (hasWelcomeOverlayBeenDismissed()) {
+    runFadeInAnimation();
+    return;
+  }
 
-  gsap.to(':root',{
-    "--img-banner-overlay-opacity": 1,
-    duration: .8,
-    ease: 'sine.in'
-  })
-
+  window.addEventListener('storage', onDismissedStorageChange);
+  window.addEventListener('siteWelcomeOverlayDismissedChange', onDismissedCustomChange);
 }
 
 class SectionId {

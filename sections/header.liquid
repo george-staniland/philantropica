@@ -49,9 +49,18 @@
     endif
   -%}
   <header class="header header-primary template-{{ template.name | handleize }} page-{{ request.page_type | handleize }} template-suffix-{{ template.suffix | handleize }}">
+    
+    {% render 'site-welcome-overlay',
+      title: section.settings.welcome_overlay_title,
+      paragraph: section.settings.welcome_overlay_paragraph,
+      button_text: section.settings.welcome_overlay_button_text
+    %}
+
     {%- assign phil_primary_menu = section.settings.menu -%}
     {%- assign right_menu = linklists[section.settings.menu_right] -%}
     {% render 'menu-items-overlay', menu: phil_primary_menu %}
+
+
     <div class="header-mobile-menu-wrap" role="navigation" aria-label="Mobile menu">
       {%- if phil_primary_menu != blank -%}
         {%- for link in phil_primary_menu.links -%}
@@ -251,6 +260,24 @@
       "id": "menu_right",
       "label": "Menu Right",
       "info": "Menu handle (for example: main-menu)"
+    },
+    {
+      "type": "text",
+      "id": "welcome_overlay_title",
+      "label": "Welcome overlay title",
+      "default": "Welcome to our store"
+    },
+    {
+      "type": "richtext",
+      "id": "welcome_overlay_paragraph",
+      "label": "Welcome overlay paragraph",
+      "default": "<p>Discover our latest collection and curated highlights.</p>"
+    },
+    {
+      "type": "text",
+      "id": "welcome_overlay_button_text",
+      "label": "Welcome overlay button text",
+      "default": "Enter site"
     }
   ],
   "blocks": [

@@ -939,6 +939,7 @@ summary::-webkit-details-marker {
   box-shadow: 0px -2px 0px 0px rgba(255, 255, 255, 1), 0px 2px 0px 0px rgba(23, 34, 88, 1);
   transition: box-shadow 0.4s ease-in-out;
   margin-bottom: 3px;
+  line-height: 1;
 }
 
 .button.button--primary:hover {
@@ -3833,6 +3834,12 @@ body.template-suffix-faq .gradient, body.template-suffix-faq footer  {
   align-items: center;
   justify-content: flex-start;
   gap: 24px;
+}
+
+.phil-primary-nav-plain,
+.header__menu_right,
+.section__image-banner .banner__box {
+  opacity: 0;
 }
 
 .phil-nav__link {
