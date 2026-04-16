@@ -10,15 +10,18 @@ if (!customElements.get('product-form')) {
         this.form.addEventListener('submit', this.onSubmitHandler.bind(this));
         this.cart = document.querySelector('cart-notification') || document.querySelector('cart-drawer');
         this.submitButton = this.querySelector('[type="submit"]');
-        this.submitButtonText = this.submitButton.querySelector('span');
+        this.submitButtonText = this.submitButton ? this.submitButton.querySelector('span') : null;
 
-        if (document.querySelector('cart-drawer')) this.submitButton.setAttribute('aria-haspopup', 'dialog');
+        if (document.querySelector('cart-drawer') && this.submitButton) {
+          this.submitButton.setAttribute('aria-haspopup', 'dialog');
+        }
 
         this.hideErrors = this.dataset.hideErrors === 'true';
       }
 
       onSubmitHandler(evt) {
         evt.preventDefault();
+        if (!this.submitButton) return;
         if (this.submitButton.getAttribute('aria-disabled') === 'true') return;
 
         this.handleErrorMessage();
@@ -57,7 +60,7 @@ if (!customElements.get('product-form')) {
               const soldOutMessage = this.submitButton.querySelector('.sold-out-message');
               if (!soldOutMessage) return;
               this.submitButton.setAttribute('aria-disabled', true);
-              this.submitButtonText.classList.add('hidden');
+              if (this.submitButtonText) this.submitButtonText.classList.add('hidden');
               soldOutMessage.classList.remove('hidden');
               this.error = true;
               return;
@@ -125,12 +128,14 @@ if (!customElements.get('product-form')) {
       }
 
       toggleSubmitButton(disable = true, text) {
+        if (!this.submitButton) return;
+
         if (disable) {
           this.submitButton.setAttribute('disabled', 'disabled');
-          if (text) this.submitButtonText.textContent = text;
+          if (text && this.submitButtonText) this.submitButtonText.textContent = text;
         } else {
           this.submitButton.removeAttribute('disabled');
-          this.submitButtonText.textContent = window.variantStrings.addToCart;
+          if (this.submitButtonText) this.submitButtonText.textContent = window.variantStrings.addToCart;
         }
       }
 

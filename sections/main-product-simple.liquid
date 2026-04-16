@@ -99,7 +99,12 @@
               </span>
 
             </div>
+          
+            <form-widget mode='popup' ucid='WKsYAmkagn9TDG0cyvSkGtl1d2I' component="customButton"></form-widget>
 
+            <button type="button" class="vrlps-trigger product-waitlist-trigger button button--primary">Reserve</button>
+        
+          {% comment %} 
           <button
             id="ProductSubmitButton-{{ section.id }}"
             type="submit"
@@ -112,6 +117,9 @@
               disabled
             {% endif %}
           >
+       
+
+
             <span>
               {%- if product.selected_or_first_available_variant == null -%}
                 {{ 'products.product.unavailable' | t }}
@@ -123,12 +131,47 @@
             </span>
             {%- render 'loading-spinner' -%}
           </button>
+
+        {% endcomment %}
+
         </div>
       {%- endform -%}
     </product-form>
   </section>
 
 </section>
+
+<script>
+  (() => {
+    const bindWaitlistTrigger = () => {
+      const triggerButtons = document.querySelectorAll('.product-waitlist-trigger');
+      if (!triggerButtons.length) return;
+
+      triggerButtons.forEach((button) => {
+        if (button.dataset.vrlpsBound === 'true') return;
+        button.dataset.vrlpsBound = 'true';
+
+        button.addEventListener('click', () => {
+          if (!window.ViralLoops || typeof window.ViralLoops.getCampaign !== 'function') return;
+
+          window.ViralLoops.getCampaign()
+            .then((campaign) => {
+              if (campaign && typeof campaign.customButtonTrigger === 'function') {
+                campaign.customButtonTrigger();
+              }
+            })
+            .catch(() => {});
+        });
+      });
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', bindWaitlistTrigger);
+    } else {
+      bindWaitlistTrigger();
+    }
+  })();
+</script>
 
 {% schema %}
 {
